@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build-pdf": "ts-node --project tsconfig.scripts.json scripts/render-to-pdf.ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.0.1",
+    "@mui/material": "^9.0.1",
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -19,6 +24,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "puppeteer": "^25.1.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

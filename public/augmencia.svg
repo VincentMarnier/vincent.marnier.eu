@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.00 400.00" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">
+  <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0%" stop-color="#96C9A8" />
+    <stop offset="100%" stop-color="#74A584" />
+  </linearGradient>
+  <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0%" stop-color="#2A4B66" />
+    <stop offset="100%" stop-color="#1A3247" />
+  </linearGradient>
+  <linearGradient id="Gradient3" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0%" stop-color="#FF9B82" />
+    <stop offset="100%" stop-color="#E67E66" />
+  </linearGradient>
+  <defs/>
+  <path fill="url(#Gradient3)" d="
+    M 11,349
+    Q 1 349, 5.23 339.94
+    L 135.77,60.06
+    Q 140 51, 150 51
+    L 230,51
+    Q 240 51, 235.77 50.06
+    L 208.72,118.07
+    L 182.71,118.07
+    L 75,349
+    Z" />
+  <path fill="url(#Gradient2)" d="
+    M 247.43,74.06
+    Q 251.66,65, 256.26 73.87
+    L 394.99,340.12
+    Q 399 349, 389 349
+    L 346.71,349
+    L 226.91 118.07
+    Z" />
+  <path fill="url(#Gradient1)" d="
+    M 111,349
+    Q 101 349, 105.24 339.94
+    L 165.78,210.15
+    Q 170 201.08, 180 201.08
+    L 209,201.08
+    Q 219 201.08, 213.77 210.14
+    L 153.33,339.93
+    Q 150 349, 140 349
+    Z" />
+</svg>
