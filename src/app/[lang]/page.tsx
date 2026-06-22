@@ -1,11 +1,11 @@
 "use client"
 
 import Image from "next/image";
-import { Box, Divider, Paper, Stack, Typography, useTheme } from "@mui/material";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { alpha, Box, Divider, Paper, Stack, Typography, useTheme } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import PersonIcon from '@mui/icons-material/Person';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import CodeIcon from '@mui/icons-material/Code';
@@ -30,7 +30,7 @@ export default function Page() {
           bgcolor: theme.palette.primary.dark,
           color: theme.palette.primary.contrastText,
           py: 3,
-          px: {xs: 1, md: 2},
+          px: 2,
           minHeight: "200vh" // For printing
         }}
         square
@@ -54,10 +54,22 @@ export default function Page() {
             {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 0.5, alignItems: "center"}}>{r.icon} <Typography>{r.text}</Typography></Stack>)}
           </Stack>
         </Stack>
-        <Section icon={AccessTimeIcon} title={data.titles["Technical Skills"]} color={theme.palette.primary.contrastText}>
-          <Stack direction="row" sx={{flexWrap: 'wrap', gap: 0.5}}>
-            {data.technicalSkills.map((t, idx) => <Badge key={`technical-skills-${idx}`} text={t} color={theme.palette.primary.contrastText} />)}
-          </Stack>
+        <Section icon={data.keySkills.icon} title={data.keySkills.title} color={theme.palette.primary.contrastText}>
+          <Box>
+            <Stack direction="row" sx={{gap:0.5, flexWrap: "wrap"}}>
+              {data.keySkills.data.map((d, idx) => <Badge key={`keyskills-${idx}`} text={d} color={theme.palette.primary.contrastText} />)}
+            </Stack>
+
+            <Box sx={{borderLeft: `solid 1px ${alpha(theme.palette.secondary.main, 0.1)}`, ml: 1.2, pl: 2, mt: 1}}>
+              {data.skills.map((t, idx) => {
+              return <Section key={`skills-${idx}`} icon={t.icon} title={t.title} color={theme.palette.primary.contrastText}  mt={idx === 0 ? 0 : 1} variant="small">
+                <Stack direction="row" sx={{gap:0.5, flexWrap: "wrap", mt: 0.6}}>
+                  {t.data.map((d, idx2) => <Badge key={`skills-${idx}-${idx2}`} text={d} color={theme.palette.primary.contrastText} fontSize={0.7} px={7 / 4} py={7 / 16} />)}
+                </Stack>
+              </Section>})}
+            </Box>
+          </Box>
+          
         </Section>
         <Section icon={LanguageIcon} title={data.titles.Languages} color={theme.palette.primary.contrastText}>
           <Box>
@@ -83,11 +95,11 @@ export default function Page() {
           </Typography>
           <Divider sx={{width: 300, my: 1}} />
           <Typography variant="h3" component="h2" align="center" gutterBottom>
-            {data.titles["Software Architect & Tech Consultant"]}
+            {data.titles["Main title"]}
           </Typography>
         </Stack>
         
-        <Section icon={BusinessCenterOutlinedIcon} title={data.titles.Profile} color={theme.palette.text.primary} mt={4}>
+        <Section icon={PersonIcon} title={data.titles.Profile} color={theme.palette.text.primary} mt={4}>
           {data.profile}
         </Section>
         

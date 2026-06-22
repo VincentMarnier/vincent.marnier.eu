@@ -2,10 +2,17 @@ import CallIcon from '@mui/icons-material/Call';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import LinkIcon from '@mui/icons-material/Link';
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import CloudIcon from '@mui/icons-material/Cloud';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import InsightsIcon from '@mui/icons-material/Insights';
+import StorageIcon from '@mui/icons-material/Storage';
+import CodeIcon from '@mui/icons-material/Code';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import { Typography } from '@mui/material';
 
 export const titles = {
-  "Software Architect & Tech Consultant": "Architecte Logiciel & Consultant Tech",
+  "Main title": "Architecte Logiciel",
   "Profile": "Profil",
   "Professional experience": "Expérience professionnelle",
   "Education": "Formation",
@@ -16,9 +23,9 @@ export const titles = {
 }
 
 export const profile = <Typography>
-    Architecte logiciel et entrepreneur, je transforme des idées complexes en produits utilisables.{" "}
-    <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Plus de 13 ans d'expérience</Typography> dans l'industrie, dont 8 ans chez Schneider Electric à piloter des solutions innovantes de bout en bout.{" "}
-    <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Fondateur d'Augmencia</Typography>, je mets aujourd'hui cette expertise au service de missions à fort impact.
+  Architecte logiciel et entrepreneur, je transforme des idées complexes en produits industriels et cloud utilisables.{" "}
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d’expérience</Typography> dans l’industrie, dont 8 ans chez Schneider Electric sur des solutions IoT et Edge à grande échelle.{" "}
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Fondateur d’Augmencia</Typography>, je conçois et développe des plateformes cloud & edge de bout en bout, de l’architecture au delivery.
 </Typography>
 
 export const aboutMe = [
@@ -35,7 +42,7 @@ export const aboutMe = [
   {
     key: 'location',
     icon: <LocationPinIcon color="secondary" fontSize="medium" />,
-    text: 'Grenoble'
+    text: 'Moirans (38430)'
   },
   {
     key: 'website',
@@ -44,7 +51,47 @@ export const aboutMe = [
   }
 ];
 
-export const technicalSkills = [ "C#", "JavaScript/TypeScript", "ASP.NET", "React/Next.js", "Réalité Augmentée", "Unity", "Vision par Ordinateur", "Kubernetes", "Docker", "Architecture Cloud" ];
+export const keySkills = {
+  icon: ArchitectureIcon,
+  title: "Compétences",
+  data: [ 
+    "Architecture Logicielle",
+    "Architecture Cloud",
+    "Architectures Distribuées",
+    "Microservices",
+    "Event-Driven Architecture",
+    "Domain-Driven Design (DDD)",
+    "Security by Design",
+    "IAM",
+    "Zero Trust",
+  ]
+}
+
+export const skills = [{
+  icon: CloudIcon,
+  title: "Cloud & Platform",
+  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "Secrets Management", "PKI & Certificate Management"],
+}, {
+  icon: SyncAltIcon,
+  title: "APIs & Intégration",
+  data: ["API Design (REST, gRPC)", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"]
+}, {
+  icon: InsightsIcon,
+  title: "Observabilité",
+  data: ["Prometheus", "Grafana"]
+}, {
+  icon: StorageIcon,
+  title: "Data",
+  data: ["PostgreSQL", "Redis", "SQL Server", "NoSQL", "MongoDB"]
+}, {
+  icon: CodeIcon,
+  title: "Développement",
+  data: ["ASP.NET", "React", "Next.js"]
+}, {
+  icon: PrecisionManufacturingIcon,
+  title: "Domaines",
+  data: ["IoT", "Edge Computing", "Vision par Ordinateur"]
+}]
 
 export const languages = [ "🇫🇷 Français : Natif", "🇬🇧 Anglais : Courant" ];
 
@@ -60,7 +107,7 @@ export const jobs = [
     title: "Augmencia",
     subTitle: "CTO",
     subTitleBadge: "Fondateur",
-    description: "Conçu et développé de A à Z une plateforme SaaS de Réalité Augmentée permettant aux experts métier de capitaliser leurs savoir-faire sans compétences techniques. Full-stack, architecture cloud et go-to-market.",
+    description: "Conçu et développé une plateforme cloud & edge de Réalité Augmentée permettant aux experts métier de capitaliser leurs savoir-faire sans compétences techniques. Architecture, developpement et stratégie produit (cloud, edge, IoT).",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: "Aujourd'hui",
@@ -71,9 +118,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Consultant Logiciels",
+    subTitle: "Architecte Logiciel",
     subTitleBadge: "Freelance",
-    description: "Conception d'une couche d'acquisition de données IT/OT unifiée servant de base commune aux projets Edge de Schneider Electric.",
+    description: "Conception d’une architecture de plateforme d’acquisition de données IT/OT. Définition de l’architecture et des principes d’intégration pour systèmes distribués en environnement edge.",
     color: "#009e4d",
     startDate: 'Juin 2023',
     endDate: 'Déc 2023',
@@ -84,7 +131,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Consultant Logiciels",
     subTitleBadge: "Freelance",
-    description: "Audit et accompagnement d'EcoStruxure™ Clean-in-Place Advisor, une solution de gestion de la qualité d'opérations de nettoyage industriel.",
+    description: "Audit et accompagnement d’une solution industrielle critique: Analyse d’architecture et amélioration du système existant",
     color: "#009e4d",
     startDate: 'Déc 2022',
     endDate: 'Mai 2023',
@@ -95,7 +142,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Consultant Innovation",
     subTitleBadge: "Freelance",
-    description: "Développement de Preuves de Concept combinant vision par ordinateur et intelligence artificielle pour des cas d'usage industriels.",
+    description: "Développement de démonstrateurs en vision par ordinateur et intelligence artificielle pour des applications industrielles. Prototypage rapide et exploration de solutions innovantes.",
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'Déc 2022',
@@ -104,9 +151,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Lead Developer",
+    subTitle: "Lead Developer / Architecte Logiciel",
     subTitleBadge: "Freelance",
-    description: "Pilotage du développement d'EcoStruxure™ Augmented Operator Advisor, une solution de Réalité Augmentée déployée sur des sites industriels à l'international.",
+    description: "Conception et pilotage du développement d’une solution de réalité augmentée industrielle déployée à l’international. Responsabilité de l’architecture logicielle et de l’évolution d’un système destiné à des environnements industriels.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -117,7 +164,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Développeur Logiciels",
     subTitleBadge: "Freelance",
-    description: "Contribution au projet de recherche collaboratif AMIE, développement de PoC et démonstrateurs pour le département Innovation, et création d'une solution de Réalité Augmentée 3D (devenue EcoStruxure™ XR Operator Advisor) basée sur les tablettes Google Tango et les lunettes Microsoft HoloLens.",
+    description: "Contribution au projet de recherche collaboratif AMIE, développement de PoC et démonstrateurs au sein de l'équipe Innovation, puis création d'une solution de Réalité Augmentée sur Google Tango et Microsoft HoloLens.",
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Déc 2016',
@@ -164,7 +211,7 @@ export const projectsAndContributions = [
   {
     subTitle: "Apriltag",
     color: "black",
-    description: "Bibliothèque open source de marqueurs fiduciaires AR très utilisée en robotique. Correction d'une fuite mémoire, résolution de problèmes de cross-compilation Windows et ajout de workflows CI.",
+    description: "Bibliothèque open source de marqueurs AR très utilisée en robotique. Correction d'une fuite mémoire, résolution de problèmes de cross-compilation Windows et ajout de workflows CI.",
     url: 'https://github.com/AprilRobotics/apriltag',
     logoSrc: '/github.svg',
     logoSize: 98,

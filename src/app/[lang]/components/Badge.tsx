@@ -4,11 +4,17 @@ import { alpha, Paper, Stack, Typography } from "@mui/material"
 export default function Badge({
   icon,
   text,
-  color
+  color,
+  py = 0.5,
+  px = 2,
+  fontSize = 0.8
 }: {
   icon?: React.ReactNode,
   text: string,
-  color: string
+  color: string,
+  py?: number,
+  px?: number,
+  fontSize?: number
 }) {
   return (
     <Paper
@@ -17,8 +23,8 @@ export default function Badge({
         ':hover': {
           backgroundColor: alpha(color, 0.2),
         },
-        py: 0.5,
-        px: 2,
+        py,
+        px,
         backdropFilter: 'blur(4px)',
         transition: 'background-color 0.3s',
         borderRadius: 50,
@@ -34,7 +40,7 @@ export default function Badge({
         <Typography
           variant="caption"
           component="p"
-          sx={{ color: color, fontSize: "0.8rem", fontWeight: 700 }}
+          sx={{ color: color, fontSize: `${fontSize}rem`, fontWeight: 700 }}
           noWrap
         >
           {text}

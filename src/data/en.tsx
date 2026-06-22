@@ -2,10 +2,17 @@ import CallIcon from '@mui/icons-material/Call';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import LinkIcon from '@mui/icons-material/Link';
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import CloudIcon from '@mui/icons-material/Cloud';
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import InsightsIcon from '@mui/icons-material/Insights';
+import StorageIcon from '@mui/icons-material/Storage';
+import CodeIcon from '@mui/icons-material/Code';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import { Typography } from '@mui/material';
 
 export const titles = {
-  "Software Architect & Tech Consultant": "Software Architect & Tech Consultant",
+  "Main title": "Software Architect",
   "Profile": "Profile",
   "Professional experience": "Professional experience",
   "Education": "Education",
@@ -16,10 +23,9 @@ export const titles = {
 }
 
 export const profile = <Typography>
-    Software engineer with <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> building  innovative industrial solutions.{" "}
-    <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Founder of Augmencia</Typography>, an AR platform designed for industrial expertise capture, deployable without any technical skills.
-    Proven track record at Schneider Electric <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>leading products from concept to market</Typography>.
-    Passionate about closing the gap between cutting-edge technology and real-world operational needs.
+  Software Architect and entrepreneur, turning complex ideas into scalable industrial and cloud-based products.
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> in the industry, including 8 years at Schneider Electric delivering large-scale IoT and Edge solutions.{" "}
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Founder of Augmencia</Typography>, designing and building end-to-end cloud and edge platforms, from architecture to delivery.
 </Typography>
 
 export const aboutMe = [
@@ -45,14 +51,54 @@ export const aboutMe = [
   }
 ];
 
-export const technicalSkills = [ "C#", "JavaScript/TypeScript", "ASP.NET", "React/Next.js", "Augmented Reality", "Unity", "Computer Vision", "Kubernetes", "Docker", "Cloud Architecture" ];
+export const keySkills = {
+  icon: ArchitectureIcon,
+  title: "Core Skills",
+  data: [ 
+    "Software Architecture",
+    "Cloud Architecture",
+    "Distributed Systems",
+    "Microservices",
+    "Event-Driven Architecture",
+    "Domain-Driven Design (DDD)",
+    "Security by Design",
+    "IAM",
+    "Zero Trust"
+  ]
+}
+
+export const skills = [{
+  icon: CloudIcon,
+  title: "Cloud & Platform",
+  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "Secrets Management", "PKI & Certificate Management"],
+}, {
+  icon: SyncAltIcon,
+  title: "APIs & Integration",
+  data: ["API Design (REST, gRPC)", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"]
+}, {
+  icon: InsightsIcon,
+  title: "Observability",
+  data: ["Prometheus", "Grafana"]
+}, {
+  icon: StorageIcon,
+  title: "Data",
+  data: ["PostgreSQL", "Redis", "SQL Server", "NoSQL", "MongoDB"]
+}, {
+  icon: CodeIcon,
+  title: "Software Development",
+  data: ["ASP.NET", "React", "Next.js"]
+}, {
+  icon: PrecisionManufacturingIcon,
+  title: "Domains",
+  data: ["IoT", "Edge Computing", "Vision par Ordinateur"]
+}]
 
 export const languages = [ "🇫🇷 French: Native", "🇬🇧 English: Full Professional" ];
 
 export const interests = [
-  "Strategy board games",
-  "Science & technology (physics, space, biology)",
-  "Cooking (techniques & world flavours)",
+  "Board games",
+  "Science & Technology)",
+  "Cooking (techniques & world cuisines)",
   "E-sport (French national team captain, Jedi Academy - 2009)",
 ]
 
@@ -61,7 +107,7 @@ export const jobs = [
     title: "Augmencia",
     subTitle: "CTO",
     subTitleBadge: "Founder",
-    description: "Built from scratch an Augmented Reality SaaS platform enabling industrial experts to digitize and share their know-how without any technical skills. Full-stack development, cloud architecture, and go-to-market strategy.",
+    description: "Designed and developed an Augmented Reality cloud and edge platform enabling field experts to capture and share knowledge without technical expertise. Responsible for architecture, software development, and product strategy across cloud, edge, and IoT environments.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: 'Present',
@@ -72,9 +118,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Software Consultant",
+    subTitle: "Software Architect",
     subTitleBadge: "Freelance",
-    description: "Designed a unified IT/OT data acquisition layer to serve as a common foundation for Schneider Electric's Edge computing projects.",
+    description: "Designed the architecture of an IT/OT data acquisition platform. Defined architecture principles and integration strategies for distributed systems operating in edge environments.",
     color: "#009e4d",
     startDate: 'Jun 2023',
     endDate: 'Dec 2023',
@@ -85,7 +131,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Consultant",
     subTitleBadge: "Freelance",
-    description: "Audited and supported EcoStruxure™ Clean-in-Place Advisor, a quality management solution for industrial cleaning operations, ahead of its maintenance phase.",
+    description: "Audited and advised on a business-critical industrial solution. Conducted architecture reviews and drove improvements to the existing system.",
     color: "#009e4d",
     startDate: 'Dec 2022',
     endDate: 'May 2023',
@@ -96,7 +142,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Innovation Consultant",
     subTitleBadge: "Freelance",
-    description: "Developed Proof of Concepts combining computer vision and AI for industrial use cases.",
+    description: "Developed computer vision and AI prototypes, rapidly evaluating innovative industrial solutions.",
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'Dec 2022',
@@ -105,9 +151,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Lead Developer",
+    subTitle: "Lead Developer / Software Architect",
     subTitleBadge: "Freelance",
-    description: "Led the development of EcoStruxure™ Augmented Operator Advisor, an AR solution deployed across industrial sites worldwide.",
+    description: "Designed and led the development of an industrial Augmented Reality solution deployed internationally. Responsible for software architecture and the evolution of a platform used in industrial environments.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -118,7 +164,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Developer",
     subTitleBadge: "Freelance",
-    description: "Contributed to the AMIE collaborative research project, developed PoCs and demonstrators for the Innovation department, and built a 3D Augmented Reality solution (later EcoStruxure™ XR Operator Advisor) based on Google Tango tablets and Microsoft HoloLens.",
+    description: "Contributed to the AMIE collaborative research project, developed PoC and demonstrators within the Innovation team, then built Augmented Reality solutions for Google Tango and Microsoft HoloLens.",
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Dec 2016',
