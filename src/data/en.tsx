@@ -5,15 +5,16 @@ import LinkIcon from '@mui/icons-material/Link';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CloudIcon from '@mui/icons-material/Cloud';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
-import InsightsIcon from '@mui/icons-material/Insights';
-import StorageIcon from '@mui/icons-material/Storage';
 import CodeIcon from '@mui/icons-material/Code';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import LockIcon from '@mui/icons-material/Lock';
+import StorageIcon from '@mui/icons-material/Storage';
 import { Typography } from '@mui/material';
 import { ResumeData } from './types';
 
 export const titles = {
-  "Main title": "Software Architect",
+  "Main title": "Lead Developer / Tech Lead",
   "Profile": "Profile",
   "Professional experience": "Professional experience",
   "Education": "Education",
@@ -24,9 +25,8 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Software Architect and entrepreneur, turning complex ideas into scalable industrial and cloud-based products.
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> in the industry, including 8 years at Schneider Electric delivering large-scale IoT and Edge solutions.{" "}
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Founder of Augmencia</Typography>, designing and building end-to-end cloud and edge platforms, from architecture to delivery.
+  Lead Developer and founder with <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> shipping complex software — from industrial AR solutions to cloud platforms. I take full technical ownership: I define the architecture, write the code, set up the infrastructure, and ship.{" "}
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Founder of Augmencia</Typography>, building end-to-end cloud and edge platforms solo.
 </Typography>
 
 export const aboutMe = [
@@ -55,43 +55,46 @@ export const aboutMe = [
 export const keySkills = {
   icon: ArchitectureIcon,
   title: "Core Skills",
-  data: [ 
+  data: [
     "Software Architecture",
-    "Cloud Architecture",
-    "Distributed Systems",
-    "Microservices",
-    "Event-Driven Architecture",
-    "Domain-Driven Design (DDD)",
-    "Security by Design",
-    "IAM",
-    "Zero Trust"
+    "System Design",
+    "Technical Leadership",
+    "API Design",
+    "CI/CD",
+    "Code Review & Quality",
+    "Git",
+    "Agile & Scrum"
   ]
 }
 
 export const skills = [{
+  icon: CodeIcon,
+  title: "Languages & Frameworks",
+  data: ["C#", ".NET", "ASP.NET", "TypeScript", "JavaScript", "React", "Next.js", "Node.js"],
+}, {
   icon: CloudIcon,
-  title: "Cloud & Platform",
-  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "Secrets Management", "PKI & Certificate Management"],
+  title: "Cloud & Infrastructure",
+  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "S3", "Lambda", "Prometheus", "Grafana"],
+}, {
+  icon: LockIcon,
+  title: "Security & Identity",
+  data: ["Keycloak", "OIDC", "SAML", "OAuth"],
 }, {
   icon: SyncAltIcon,
-  title: "APIs & Integration",
-  data: ["API Design (REST, gRPC)", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"]
-}, {
-  icon: InsightsIcon,
-  title: "Observability",
-  data: ["Prometheus", "Grafana"]
+  title: "Messaging & Protocols",
+  data: ["REST", "gRPC", "Protobuf", "WebRTC", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"],
 }, {
   icon: StorageIcon,
-  title: "Data",
-  data: ["PostgreSQL", "Redis", "SQL Server", "NoSQL", "MongoDB"]
+  title: "Databases",
+  data: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "SQLite"],
 }, {
-  icon: CodeIcon,
-  title: "Software Development",
-  data: ["ASP.NET", "React", "Next.js"]
+  icon: EngineeringIcon,
+  title: "Tooling & Quality",
+  data: ["GitHub Actions", "Jenkins", "SonarQube", "NUnit", "Jest"],
 }, {
   icon: PrecisionManufacturingIcon,
   title: "Domains",
-  data: ["IoT", "Edge Computing", "Vision par Ordinateur"]
+  data: ["Cloud", "IoT", "Edge Computing", "Augmented Reality", "Computer Vision"],
 }]
 
 export const languages = [ "🇫🇷 French: Native", "🇬🇧 English: Full Professional" ];
@@ -106,9 +109,9 @@ export const interests = [
 export const jobs = [
   {
     title: "Augmencia",
-    subTitle: "CTO",
+    subTitle: "Founder",
     subTitleBadge: "Founder",
-    description: "Designed and developed an Augmented Reality cloud and edge platform enabling field experts to capture and share knowledge without technical expertise. Responsible for architecture, software development, and product strategy across cloud, edge, and IoT environments.",
+    description: "Built Augmencia's AR cloud and edge platform from scratch — architecture, development, infrastructure, and deployment. Full technical ownership of a production system serving field experts across multiple industries.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: 'Present',
@@ -119,9 +122,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Software Architect",
+    subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Designed the architecture of an IT/OT data acquisition platform. Defined architecture principles and integration strategies for distributed systems operating in edge environments.",
+    description: "Led the design and development of an IT/OT data acquisition platform. Defined technical direction, integration strategies, and delivered a distributed system for edge environments.",
     color: "#009e4d",
     startDate: 'Jun 2023',
     endDate: 'Dec 2023',
@@ -132,29 +135,18 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Consultant",
     subTitleBadge: "Freelance",
-    description: "Audited and advised on a business-critical industrial solution. Conducted architecture reviews and drove improvements to the existing system.",
+    description: "Innovations, architecture reviews, and technical improvements across industrial solutions.",
     color: "#009e4d",
-    startDate: 'Dec 2022',
+    startDate: 'Nov 2021',
     endDate: 'May 2023',
     logoSrc: '/se.svg',
     logoSize: 1540,
   },
   {
     title: "Schneider Electric",
-    subTitle: "Innovation Consultant",
+    subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Developed computer vision and AI prototypes, rapidly evaluating innovative industrial solutions.",
-    color: "#009e4d",
-    startDate: 'Nov 2021',
-    endDate: 'Dec 2022',
-    logoSrc: '/se.svg',
-    logoSize: 1540,
-  },
-  {
-    title: "Schneider Electric",
-    subTitle: "Lead Developer / Software Architect",
-    subTitleBadge: "Freelance",
-    description: "Designed and led the development of an industrial Augmented Reality solution deployed internationally. Responsible for software architecture and the evolution of a platform used in industrial environments.",
+    description: "Led the development of an industrial AR solution deployed internationally. Owned technical decisions, platform evolution, and delivery of a system used in production across multiple countries.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -175,7 +167,6 @@ export const jobs = [
   {
     title: "CYBERIO",
     subTitle: "Software Developer",
-    //description: "Developed an echolocation simulator and mixed reality applications leveraging device sensors.",
     color: "#83bb34",
     startDate: 'Feb 2013',
     endDate: 'Aug 2013',

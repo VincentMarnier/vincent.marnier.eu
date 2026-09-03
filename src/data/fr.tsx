@@ -5,15 +5,16 @@ import LinkIcon from '@mui/icons-material/Link';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CloudIcon from '@mui/icons-material/Cloud';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
-import InsightsIcon from '@mui/icons-material/Insights';
-import StorageIcon from '@mui/icons-material/Storage';
 import CodeIcon from '@mui/icons-material/Code';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import LockIcon from '@mui/icons-material/Lock';
+import StorageIcon from '@mui/icons-material/Storage';
 import { Typography } from '@mui/material';
 import { ResumeData } from './types';
 
 export const titles = {
-  "Main title": "Architecte Logiciel",
+  "Main title": "Lead Developer / Tech Lead",
   "Profile": "Profil",
   "Professional experience": "Expérience professionnelle",
   "Education": "Formation",
@@ -24,9 +25,8 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Architecte logiciel et entrepreneur, je transforme des idées complexes en produits industriels et cloud utilisables.{" "}
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d’expérience</Typography> dans l’industrie, dont 8 ans chez Schneider Electric sur des solutions IoT et Edge à grande échelle.{" "}
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Fondateur d’Augmencia</Typography>, je conçois et développe des plateformes cloud & edge de bout en bout, de l’architecture au delivery.
+  Lead Developer et fondateur avec <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d'expérience</Typography> en développement logiciel — de la réalité augmentée industrielle aux plateformes cloud. Je prends la responsabilité technique complète : architecture, code, infrastructure, delivery.{" "}
+  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Fondateur d'Augmencia</Typography>, je développe seul des plateformes cloud & edge de bout en bout.
 </Typography>
 
 export const aboutMe = [
@@ -55,43 +55,46 @@ export const aboutMe = [
 export const keySkills = {
   icon: ArchitectureIcon,
   title: "Compétences",
-  data: [ 
+  data: [
     "Architecture Logicielle",
-    "Architecture Cloud",
-    "Architectures Distribuées",
-    "Microservices",
-    "Event-Driven Architecture",
-    "Domain-Driven Design (DDD)",
-    "Security by Design",
-    "IAM",
-    "Zero Trust",
+    "Conception de Systèmes",
+    "Leadership Technique",
+    "Conception d'API",
+    "CI/CD",
+    "Revue de Code & Qualité",
+    "Git",
+    "Agile & Scrum"
   ]
 }
 
 export const skills = [{
+  icon: CodeIcon,
+  title: "Langages & Frameworks",
+  data: ["C#", ".NET", "ASP.NET", "TypeScript", "JavaScript", "React", "Next.js", "Node.js"],
+}, {
   icon: CloudIcon,
-  title: "Cloud & Platform",
-  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "Secrets Management", "PKI & Certificate Management"],
+  title: "Cloud & Infrastructure",
+  data: ["Azure", "OVHcloud", "Scaleway", "Kubernetes", "Docker", "Helm", "Infrastructure as Code (IaC)", "S3", "Lambda", "Prometheus", "Grafana"],
+}, {
+  icon: LockIcon,
+  title: "Sécurité & Identité",
+  data: ["Keycloak", "OIDC", "SAML", "OAuth"],
 }, {
   icon: SyncAltIcon,
-  title: "APIs & Intégration",
-  data: ["API Design (REST, gRPC)", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"]
-}, {
-  icon: InsightsIcon,
-  title: "Observabilité",
-  data: ["Prometheus", "Grafana"]
+  title: "Messagerie & Protocoles",
+  data: ["REST", "gRPC", "Protobuf", "WebRTC", "RabbitMQ", "MQTT", "NATS", "Redis Pub/Sub"],
 }, {
   icon: StorageIcon,
-  title: "Data",
-  data: ["PostgreSQL", "Redis", "SQL Server", "NoSQL", "MongoDB"]
+  title: "Bases de données",
+  data: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "SQLite"],
 }, {
-  icon: CodeIcon,
-  title: "Développement",
-  data: ["ASP.NET", "React", "Next.js"]
+  icon: EngineeringIcon,
+  title: "Outils & Qualité",
+  data: ["GitHub Actions", "Jenkins", "SonarQube", "NUnit", "Jest"],
 }, {
   icon: PrecisionManufacturingIcon,
   title: "Domaines",
-  data: ["IoT", "Edge Computing", "Vision par Ordinateur"]
+  data: ["Cloud", "IoT", "Edge Computing", "Réalité Augmentée", "Vision par Ordinateur"]
 }]
 
 export const languages = [ "🇫🇷 Français : Natif", "🇬🇧 Anglais : Courant" ];
@@ -106,9 +109,9 @@ export const interests = [
 export const jobs = [
   {
     title: "Augmencia",
-    subTitle: "CTO",
+    subTitle: "Fondateur",
     subTitleBadge: "Fondateur",
-    description: "Conçu et développé une plateforme cloud & edge de Réalité Augmentée permettant aux experts métier de capitaliser leurs savoir-faire sans compétences techniques. Architecture, developpement et stratégie produit (cloud, edge, IoT).",
+    description: "Créé la plateforme AR cloud & edge d'Augmencia de zéro : architecture, développement, infrastructure et déploiement. Responsabilité technique complète d'un système en production.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: "Aujourd'hui",
@@ -119,9 +122,9 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Architecte Logiciel",
+    subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Conception d’une architecture de plateforme d’acquisition de données IT/OT. Définition de l’architecture et des principes d’intégration pour systèmes distribués en environnement edge.",
+    description: "Pilotage de la conception et du développement d'une plateforme d'acquisition de données IT/OT. Direction technique, stratégies d'intégration et livraison d'un système distribué pour environnements edge.",
     color: "#009e4d",
     startDate: 'Juin 2023',
     endDate: 'Déc 2023',
@@ -130,31 +133,20 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Consultant Logiciels",
+    subTitle: "Consultant Logiciel",
     subTitleBadge: "Freelance",
-    description: "Audit et accompagnement d’une solution industrielle critique: Analyse d’architecture et amélioration du système existant",
+    description: "Innovations, revues d'architecture et améliorations techniques sur des solutions industrielles.",
     color: "#009e4d",
-    startDate: 'Déc 2022',
+    startDate: 'Nov 2021',
     endDate: 'Mai 2023',
     logoSrc: '/se.svg',
     logoSize: 1540,
   },
   {
     title: "Schneider Electric",
-    subTitle: "Consultant Innovation",
+    subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Développement de démonstrateurs en vision par ordinateur et intelligence artificielle pour des applications industrielles. Prototypage rapide et exploration de solutions innovantes.",
-    color: "#009e4d",
-    startDate: 'Nov 2021',
-    endDate: 'Déc 2022',
-    logoSrc: '/se.svg',
-    logoSize: 1540,
-  },
-  {
-    title: "Schneider Electric",
-    subTitle: "Lead Developer / Architecte Logiciel",
-    subTitleBadge: "Freelance",
-    description: "Conception et pilotage du développement d’une solution de réalité augmentée industrielle déployée à l’international. Responsabilité de l’architecture logicielle et de l’évolution d’un système destiné à des environnements industriels.",
+    description: "Pilotage du développement d'une solution de réalité augmentée industrielle déployée à l'international. Décisions techniques, évolution de la plateforme et livraison d'un système en production dans plusieurs pays.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -163,7 +155,7 @@ export const jobs = [
   },
   {
     title: "Schneider Electric",
-    subTitle: "Développeur Logiciels",
+    subTitle: "Développeur Logiciel",
     subTitleBadge: "Freelance",
     description: "Contribution au projet de recherche collaboratif AMIE, développement de PoC et démonstrateurs au sein de l'équipe Innovation, puis création d'une solution de Réalité Augmentée sur Google Tango et Microsoft HoloLens.",
     color: "#009e4d",
@@ -174,7 +166,7 @@ export const jobs = [
   },
   {
     title: "CYBERIO",
-    subTitle: "Développeur Logiciels",
+    subTitle: "Développeur Logiciel",
     color: "#83bb34",
     startDate: 'Fév 2013',
     endDate: 'Août 2013',
