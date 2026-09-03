@@ -1,9 +1,10 @@
 import { Box, Chip, Stack, Typography, useTheme } from "@mui/material";
+import { alpha } from "@mui/material";
 import LinkIcon from '@mui/icons-material/Link';
 import Badge from "./Badge";
 import Link from "next/link";
 
-export default function TimelineItem({title, subTitle, subTitleBadge, color, logoSrc, logoSize, startDate, endDate, description, pb = 2, drawConnector = true, url}: {
+export default function TimelineItem({title, subTitle, subTitleBadge, color, logoSrc, logoSize, startDate, endDate, description, pb = 2, drawConnector = true, url, index = 0}: {
   title?: string,
   subTitle?: string,
   subTitleBadge?: string,
@@ -15,7 +16,8 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
   description?: string,
   pb?: number,
   drawConnector?: boolean,
-  url?: string}) {
+  url?: string,
+  index?: number}) {
   const theme = useTheme();
 
   return (
@@ -24,6 +26,11 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
         display: "flex",
         alignItems: "stretch",
         breakInside: "avoid",
+        borderRadius: 3,
+        mx: -1,
+        px: 1,
+        bgcolor: index % 2 === 1 ? alpha(theme.palette.primary.main, 0.015) : 'transparent',
+        transition: 'background-color 0.3s',
       }}
     >
       {/* Left rail */}
@@ -42,9 +49,10 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
             position: "relative",
             width: 32,
             height: 32,
-            border: `1px ${color} solid`,
+            border: `2px ${alpha(color, 0.3)} solid`,
             borderRadius: "50%",
             mt: 0.5,
+            bgcolor: alpha(color, 0.05),
           }}
         >
           <img 
@@ -60,11 +68,11 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
         {drawConnector && (
           <Box
             sx={{
-              width: 4,
+              width: 3,
               flex: 1,
-              bgcolor: color,
               borderRadius: 999,
               my: 0.5,
+              background: `linear-gradient(to bottom, ${alpha(color, 0.6)}, ${alpha(color, 0.1)})`,
             }}
           />
         )}
@@ -76,7 +84,17 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
             <Typography component="h3" variant="h6" sx={{fontWeight: 700}}>
               {title}
             </Typography>
-          {startDate && endDate && <Typography variant="caption" noWrap><time>{startDate}</time> - <time>{endDate}</time></Typography>}
+          {startDate && endDate && (
+            <Box sx={{
+              bgcolor: alpha(color, 0.08),
+              borderRadius: 2,
+              px: 1,
+              py: 0.25,
+              flexShrink: 0,
+            }}>
+              <Typography variant="caption" noWrap sx={{fontWeight: 500}}><time>{startDate}</time> – <time>{endDate}</time></Typography>
+            </Box>
+          )}
         </Stack>}
         {subTitle && <Stack direction="row" sx={{alignItems: "center", gap: 1}}>
             <Typography component="h4" variant="h6">

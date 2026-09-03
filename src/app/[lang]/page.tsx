@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { alpha, Box, Divider, Paper, Stack, Typography, useTheme } from "@mui/material";
+import { alpha, Box, Paper, Stack, Typography, useTheme } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -31,15 +31,15 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
           width: drawerWidth,
           flexShrink: 0,
           boxSizing: 'border-box',
-          bgcolor: theme.palette.primary.dark,
+          background: `linear-gradient(180deg, ${theme.palette.primary.dark} 0%, #142838 100%)`,
           color: theme.palette.primary.contrastText,
           py: 3,
           px: 2,
-          minHeight: "200vh" // For printing
+          minHeight: "200vh",
         }}
         square
       >
-        <Stack direction="column" sx={{gap: 2}}>
+        <Stack direction="column" sx={{gap: 2.5}}>
           <Image 
             src="/VincentMarnier.png"
             alt="Vincent Marnier"
@@ -49,13 +49,31 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
               width:"66%",
               height: "auto",
               borderRadius: "50%",
-              border: `6px ${theme.palette.secondary.main} solid`,
+              border: `4px solid transparent`,
+              backgroundImage: `linear-gradient(${theme.palette.primary.dark}, ${theme.palette.primary.dark}), linear-gradient(135deg, ${theme.palette.secondary.main}, ${theme.palette.info.main})`,
+              backgroundOrigin: 'border-box',
+              backgroundClip: 'padding-box, border-box',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
               alignSelf: "center"
             }}
           />
 
-          <Stack direction="column" sx={{gap: 0.5}}>
-            {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 0.5, alignItems: "center"}}>{r.icon} <Typography>{r.text}</Typography></Stack>)}
+          <Stack direction="column" sx={{gap: 1}}>
+            {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 1, alignItems: "center"}}>
+              <Box sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 30,
+                height: 30,
+                borderRadius: '50%',
+                bgcolor: alpha(theme.palette.secondary.main, 0.15),
+                flexShrink: 0,
+              }}>
+                {r.icon}
+              </Box>
+              <Typography variant="body2">{r.text}</Typography>
+            </Stack>)}
           </Stack>
         </Stack>
         <Section icon={data.keySkills.icon} title={data.keySkills.title} color={theme.palette.primary.contrastText}>
@@ -94,37 +112,69 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
 
       {/* ****************************************** */}
 
-      <Stack direction="column" sx={{flex: 1, pt: 4, px: 2}}>
-        <Stack sx={{alignItems: "center"}}>
-          <Typography variant="h1" align="center">
-            Vincent Marnier
-          </Typography>
-          <Divider sx={{width: 300, my: 1}} />
-          <Typography variant="h3" component="h2" align="center" gutterBottom>
+      <Stack
+        direction="column"
+        sx={{
+          flex: 1,
+          pt: 4,
+          px: 2,
+          '@keyframes fadeSlide': {
+            from: { opacity: 0, transform: 'translateY(8px)' },
+            to: { opacity: 1, transform: 'translateY(0)' },
+          },
+        }}
+      >
+        <Stack
+          sx={{
+            alignItems: "center",
+            mb: 1,
+            animation: 'fadeSlide 0.6s ease both',
+          }}
+        >
+          <Stack direction="column" sx={{alignItems: "center", gap: 0.3}}>
+            <Typography variant="h1" align="center">
+              Vincent Marnier
+            </Typography>
+            <Box sx={{
+              height: 2,
+              width: "100%",
+              borderRadius: 2,
+              background: `linear-gradient(90deg, ${alpha(theme.palette.secondary.main, 0)} 0%, ${alpha(theme.palette.secondary.main, 0.5)} 50%, ${alpha(theme.palette.secondary.main, 0)} 100%)`,
+            }} />
+          </Stack>
+          <Typography variant="subtitle1" component="h2" align="center" gutterBottom sx={{fontSize: '0.9rem', fontWeight: 400, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'text.secondary', mt: 1}}>
             {data.titles["Main title"]}
           </Typography>
         </Stack>
-        <Section icon={PersonIcon} title={data.titles.Profile} color={theme.palette.text.primary} mt={4}>
-          {data.profile}
-        </Section>
+        <Box sx={{animation: 'fadeSlide 0.6s ease 0.1s both'}}>
+          <Section icon={PersonIcon} title={data.titles.Profile} color={theme.palette.text.primary} mt={4}>
+            {data.profile}
+          </Section>
+        </Box>
         
-        <Section icon={BusinessCenterOutlinedIcon} title={data.titles["Professional experience"]} color={theme.palette.text.primary} mt={4}>
-          {data.jobs.map((job, idx) => {
-            return <TimelineItem key={`job-${idx}`} {...job} />
-          })}
-        </Section>
+        <Box sx={{animation: 'fadeSlide 0.6s ease 0.2s both'}}>
+          <Section icon={BusinessCenterOutlinedIcon} title={data.titles["Professional experience"]} color={theme.palette.text.primary} mt={4}>
+            {data.jobs.map((job, idx) => {
+              return <TimelineItem key={`job-${idx}`} {...job} index={idx} />
+            })}
+          </Section>
+        </Box>
         
-        <Section icon={SchoolOutlinedIcon} title={data.titles.Education} color={theme.palette.text.primary} mt={4}>
-          {data.diplomas.map((diploma, idx) => {
-            return <TimelineItem key={`diploma-${idx}`} {...diploma} />
-          })}
-        </Section>
+        <Box sx={{animation: 'fadeSlide 0.6s ease 0.3s both'}}>
+          <Section icon={SchoolOutlinedIcon} title={data.titles.Education} color={theme.palette.text.primary} mt={4}>
+            {data.diplomas.map((diploma, idx) => {
+              return <TimelineItem key={`diploma-${idx}`} {...diploma} index={idx} />
+            })}
+          </Section>
+        </Box>
         
-        <Section icon={CodeIcon} title={data.titles["Projects & Contributions"]} color={theme.palette.text.primary} mt={4}>
-          {data.projectsAndContributions.map((project, idx) => {
-            return <TimelineItem key={`projects-${idx}`} {...project} />
-          })}
-        </Section>
+        <Box sx={{animation: 'fadeSlide 0.6s ease 0.4s both'}}>
+          <Section icon={CodeIcon} title={data.titles["Projects & Contributions"]} color={theme.palette.text.primary} mt={4}>
+            {data.projectsAndContributions.map((project, idx) => {
+              return <TimelineItem key={`projects-${idx}`} {...project} index={idx} />
+            })}
+          </Section>
+        </Box>
       </Stack>
     </Stack>
     </>

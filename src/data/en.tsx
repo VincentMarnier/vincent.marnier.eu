@@ -203,7 +203,7 @@ export const diplomas = [
 export const projectsAndContributions = [
   {
     subTitle: "Apriltag",
-    color: "black",
+    color: "#000000",
     description: "A widely-used AR fiducial marker library. Fixed a memory leak, resolved Windows cross-compilation issues, and added CI workflows.",
     url: 'https://github.com/AprilRobotics/apriltag',
     logoSrc: '/github.svg',
@@ -213,7 +213,7 @@ export const projectsAndContributions = [
   },
   {
     subTitle: "jampgame_proxy",
-    color: "black",
+    color: "#000000",
     description: "Security hardening tool for legacy Jedi Academy game servers, addressing network vulnerabilities via proxy DLL, function detouring and injection.",
     url: 'https://github.com/VincentMarnier/jampgame_proxy',
     logoSrc: '/github.svg',

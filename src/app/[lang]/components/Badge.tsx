@@ -21,12 +21,14 @@ export default function Badge({
       variant="outlined"
       sx={{
         ':hover': {
-          backgroundColor: alpha(color, 0.2),
+          backgroundColor: alpha(color, 0.18),
+          transform: 'translateY(-1px)',
+          boxShadow: `0 2px 8px ${alpha(color, 0.15)}`,
         },
         py,
         px,
         backdropFilter: 'blur(4px)',
-        transition: 'background-color 0.3s',
+        transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
         borderRadius: 50,
         backgroundColor: alpha(color, 0.07),
         color: color,

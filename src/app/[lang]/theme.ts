@@ -43,24 +43,45 @@ const theme: Omit<ThemeOptions, 'components'> &
     borderRadius: 12,
   },
   typography: {
-    fontFamily: "Arial, Helvetica, sans-serif",
+    fontFamily: "'Inter', 'Helvetica', 'Arial', sans-serif",
     h1: {
-      fontSize: '2em',
+      fontSize: '2.4em',
+      fontWeight: 700,
+      letterSpacing: '0.02em',
     },
     h2: {
       fontSize: '1.75em',
+      fontWeight: 700,
     },
     h3: {
-      fontSize: '1.6em',
+      fontSize: '1.5em',
+      fontWeight: 600,
     },
     h4: {
-      fontSize: '1.45em',
+      fontSize: '1.35em',
+      fontWeight: 600,
     },
     h5: {
-      fontSize: '1.3em',
+      fontSize: '1.15em',
+      fontWeight: 600,
+      letterSpacing: '0.01em',
     },
     h6: {
-      fontSize: '1.15em',
+      fontSize: '1.05em',
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontSize: '1.05em',
+      fontWeight: 300,
+      color: '#5D6D7E',
+    },
+    body2: {
+      fontSize: '0.875em',
+      lineHeight: 1.6,
+    },
+    caption: {
+      fontSize: '0.75rem',
+      letterSpacing: '0.02em',
     },
   },
   components: {

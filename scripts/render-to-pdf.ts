@@ -39,6 +39,9 @@ async function generatePDF() {
       });
     });
 
+    // Let entrance animations finish before capturing
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+
     await page.emulateMediaType('screen');
 
     await page.pdf({
