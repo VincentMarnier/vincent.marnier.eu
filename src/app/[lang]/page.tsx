@@ -66,11 +66,13 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
 
             <Box sx={{borderLeft: `solid 1px ${alpha(theme.palette.secondary.main, 0.1)}`, ml: 1.2, pl: 2, mt: 1}}>
               {data.skills.map((t, idx) => {
-              return <Section key={`skills-${idx}`} icon={t.icon} title={t.title} color={theme.palette.primary.contrastText}  mt={idx === 0 ? 0 : 1} variant="small">
-                <Stack direction="row" sx={{gap:0.5, flexWrap: "wrap", mt: 0.6}}>
-                  {t.data.map((d, idx2) => <Badge key={`skills-${idx}-${idx2}`} text={d} color={theme.palette.primary.contrastText} fontSize={0.7} px={7 / 4} py={7 / 16} />)}
-                </Stack>
-              </Section>})}
+              return <Box key={`skills-${idx}`} sx={{breakInside: 'avoid'}}>
+                <Section icon={t.icon} title={t.title} color={theme.palette.primary.contrastText}  mt={idx === 0 ? 0 : 1} variant="small">
+                  <Stack direction="row" sx={{gap:0.5, flexWrap: "wrap", mt: 0.6}}>
+                    {t.data.map((d, idx2) => <Badge key={`skills-${idx}-${idx2}`} text={d} color={theme.palette.primary.contrastText} fontSize={0.7} px={7 / 4} py={7 / 16} />)}
+                  </Stack>
+                </Section>
+              </Box>})}
             </Box>
           </Box>
           
