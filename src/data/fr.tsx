@@ -10,6 +10,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import CodeIcon from '@mui/icons-material/Code';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import { Typography } from '@mui/material';
+import { ResumeData } from './types';
 
 export const titles = {
   "Main title": "Architecte Logiciel",
@@ -42,7 +43,7 @@ export const aboutMe = [
   {
     key: 'location',
     icon: <LocationPinIcon color="secondary" fontSize="medium" />,
-    text: 'Moirans (38430)'
+    text: 'Moirans (38430)' // Local visibility (EN shows Grenoble for international/remote)
   },
   {
     key: 'website',
@@ -228,3 +229,6 @@ export const projectsAndContributions = [
     drawConnector: false
   },
 ]
+
+const data: ResumeData = { titles, profile, aboutMe, keySkills, skills, languages, interests, jobs, diplomas, projectsAndContributions }
+export default data

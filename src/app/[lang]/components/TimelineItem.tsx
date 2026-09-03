@@ -75,7 +75,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
             <Typography component="h3" variant="h6" sx={{fontWeight: 700}}>
               {title}
             </Typography>
-          {startDate && endDate && <Typography variant="caption" noWrap>{startDate} - {endDate}</Typography>}
+          {startDate && endDate && <Typography variant="caption" noWrap><time>{startDate}</time> - <time>{endDate}</time></Typography>}
         </Stack>}
         {subTitle && <Stack direction="row" sx={{alignItems: "center", gap: 1}}>
             <Typography component="h4" variant="h6">

@@ -7,7 +7,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://augmencia.com'),
+  metadataBase: new URL('https://vincent.marnier.eu'),
   title: 'Vincent Marnier',
   description: "Vincent Marnier's resume",
   authors: { name: 'Vincent Marnier' },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     languages: {
       en: '/en',
       fr: '/fr',
-      'x-defaults': '/en',
+      'x-default': '/en',
     },
   }
 }

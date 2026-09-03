@@ -12,16 +12,20 @@ import CodeIcon from '@mui/icons-material/Code';
 import Section from './components/Section';
 import Badge from './components/Badge';
 import TimelineItem from './components/TimelineItem';
+import LanguageSwitcher from './components/LanguageSwitcher';
 import { useLocalizedData } from "./LanguageContext";
+import { LanguageCode } from "./language";
 
 const drawerWidth = {xs: 240, md: 280};
 
-export default function Page() {
+export default function Page({ lang }: { lang?: LanguageCode }) {
   const theme = useTheme();
   const data = useLocalizedData()
 
   return (
-    <Stack direction="row" component="main" sx={{m:0}}>
+    <>
+      <LanguageSwitcher lang={lang} />
+      <Stack direction="row" component="main" sx={{m:0}}>
       <Paper
         sx={{
           width: drawerWidth,
@@ -98,7 +102,6 @@ export default function Page() {
             {data.titles["Main title"]}
           </Typography>
         </Stack>
-        
         <Section icon={PersonIcon} title={data.titles.Profile} color={theme.palette.text.primary} mt={4}>
           {data.profile}
         </Section>
@@ -122,5 +125,6 @@ export default function Page() {
         </Section>
       </Stack>
     </Stack>
+    </>
   );
 }

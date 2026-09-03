@@ -30,12 +30,25 @@ export async function generateMetadata({
   return {
     title: title,
     description: description,
+    metadataBase: new URL('https://vincent.marnier.eu'),
+    openGraph: {
+      title: title,
+      description: description,
+      locale: lang === 'fr' ? 'fr_FR' : 'en_US',
+      siteName: 'Vincent Marnier',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: title,
+      description: description,
+    },
     alternates: {
       canonical: `/${lang}`,
       languages: {
         en: `/en`,
         fr: `/fr`,
-        'x-defaults': `/en`,
+        'x-default': `/en`,
       },
     }
   }

@@ -10,6 +10,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import CodeIcon from '@mui/icons-material/Code';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import { Typography } from '@mui/material';
+import { ResumeData } from './types';
 
 export const titles = {
   "Main title": "Software Architect",
@@ -42,7 +43,7 @@ export const aboutMe = [
   {
     key: 'location',
     icon: <LocationPinIcon color="secondary" fontSize="medium" />,
-    text: 'Grenoble, France'
+    text: 'Grenoble, France' // International/remote visibility (FR shows Moirans for local offers)
   },
   {
     key: 'website',
@@ -97,7 +98,7 @@ export const languages = [ "🇫🇷 French: Native", "🇬🇧 English: Full Pr
 
 export const interests = [
   "Board games",
-  "Science & Technology)",
+  "Science & Technology",
   "Cooking (techniques & world cuisines)",
   "E-sport (French national team captain, Jedi Academy - 2009)",
 ]
@@ -229,3 +230,6 @@ export const projectsAndContributions = [
     drawConnector: false
   },
 ]
+
+const data: ResumeData = { titles, profile, aboutMe, keySkills, skills, languages, interests, jobs, diplomas, projectsAndContributions }
+export default data

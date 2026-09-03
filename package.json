@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "tsc --noEmit",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "build-pdf": "ts-node --project tsconfig.scripts.json scripts/render-to-pdf.ts"
   },
   "dependencies": {

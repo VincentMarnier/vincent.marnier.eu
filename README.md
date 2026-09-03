@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vincent.marnier.eu
 
-## Getting Started
+Personal resume website for Vincent Marnier, built with Next.js and Material UI. Renders a two-column resume layout with sidebar and main content area, available in English and French.
 
-First, run the development server:
+**Live site:** [vincent.marnier.eu](https://vincent.marnier.eu)
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, static export)
+- [Material UI v9](https://mui.com)
+- TypeScript
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Languages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site is available in English and French. Visiting the root `/` auto-detects the visitor's browser language (`navigator.languages`) and shows a brief skeleton before rendering in the best match. A floating **EN | FR** switcher (top-right) lets anyone change language, linking to the canonical routes `/en` and `/fr`.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Static export to `out/` (runs typecheck) |
+| `npm run lint` | Run ESLint |
+| `npm run typecheck` | Run `tsc --noEmit` |
+| `npm run build-pdf` | Generate PDF resumes (requires `dev` server running) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## PDF generation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev        # in a separate terminal
+npm run build-pdf  # writes resume.en.pdf and resume.fr.pdf to the repo root
+```
 
-## Deploy on Vercel
+The floating **EN | FR** switcher is hidden in the generated PDFs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is a static export (`output: "export"`). Pushing to `main` triggers a GitHub Actions workflow that runs `next build` and deploys `out/` to GitHub Pages, making changes live at [vincent.marnier.eu](https://vincent.marnier.eu).
+
+## License
+
+Private.

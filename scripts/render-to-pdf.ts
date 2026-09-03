@@ -28,6 +28,15 @@ async function generatePDF() {
 
     await page.evaluate(async () => {
       await document.fonts.ready;
+      await Promise.all(
+        Array.from(document.images).map(
+          (img) => img.decode ? img.decode() : img.complete,
+        ),
+      );
+
+      document.querySelectorAll('.hide-in-pdf').forEach((el) => {
+        (el as HTMLElement).style.display = 'none';
+      });
     });
 
     await page.emulateMediaType('screen');

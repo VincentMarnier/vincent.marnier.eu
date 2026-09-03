@@ -3,8 +3,8 @@
 import * as React from 'react'
 import { ThemeProvider, createTheme } from '@mui/material'
 import { Inter } from "next/font/google";
-import * as en from '@/data/en'
-import * as fr from '@/data/fr'
+import en from '@/data/en'
+import fr from '@/data/fr'
 import { LanguageCode } from './language';
 import themeData from './theme';
 import { LanguageContext } from './LanguageContext';

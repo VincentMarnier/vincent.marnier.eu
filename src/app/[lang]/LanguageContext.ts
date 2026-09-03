@@ -1,8 +1,10 @@
 import * as React from 'react'
-import * as en from '@/data/en'
+import { ResumeData } from '@/data/types'
 
-export const LanguageContext = React.createContext(en);
+export const LanguageContext = React.createContext<ResumeData | null>(null)
 
-export function useLocalizedData() {
-  return React.useContext(LanguageContext)
+export function useLocalizedData(): ResumeData {
+  const data = React.useContext(LanguageContext)
+  if (!data) throw new Error('useLocalizedData must be used within a LanguageContext.Provider')
+  return data
 }
