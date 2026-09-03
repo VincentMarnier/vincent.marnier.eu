@@ -79,7 +79,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
       </Box>
 
       {/* Content */}
-      <Box sx={{ pb, pt: 0.8, width: "100%" }}>
+      <Box sx={{ pb, pt: 1, width: "100%" }}>
         {(title || startDate || endDate) && <Stack direction="row" sx={{alignItems: "center", justifyContent: "space-between"}}>
             <Typography component="h3" variant="h6" sx={{fontWeight: 700}}>
               {title}
