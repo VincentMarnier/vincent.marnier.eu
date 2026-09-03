@@ -25,8 +25,7 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Lead Developer and founder with <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> shipping complex software — from industrial AR solutions to cloud platforms. I take full technical ownership: I define the architecture, write the code, set up the infrastructure, and ship.{" "}
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Founder of Augmencia</Typography>, building end-to-end cloud and edge platforms solo.
+  Technical leader with <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> in industrial software, from AR platforms deployed internationally to cloud and edge SaaS. I handle the full picture: architecture, code, infrastructure, deployment.
 </Typography>
 
 export const aboutMe = [
@@ -103,7 +102,7 @@ export const interests = [
   "Board games",
   "Science & Technology",
   "Cooking (techniques & world cuisines)",
-  "E-sport (French national team captain, Jedi Academy - 2009)",
+
 ]
 
 export const jobs = [
@@ -111,7 +110,7 @@ export const jobs = [
     title: "Augmencia",
     subTitle: "Founder",
     subTitleBadge: "Founder",
-    description: "Built Augmencia's AR cloud and edge platform from scratch — architecture, development, infrastructure, and deployment. Full technical ownership of a production system serving field experts across multiple industries.",
+    description: "Founder building Augmencia, a SaaS platform for digitizing industrial field expertise. I designed and developed the whole cloud and edge platform myself, from architecture and the AR application to infrastructure, security and deployment. It lets field experts capture and pass on their knowledge on site, no technical skills needed, so that training, maintenance and know-how transfer work in industrial environments.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: 'Present',
@@ -124,7 +123,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Led the design and development of an IT/OT data acquisition platform. Defined technical direction, integration strategies, and delivered a distributed system for edge environments.",
+    description: "Led the architecture and development of an IT/OT data acquisition platform for Schneider Electric's edge infrastructure. Defined the target architecture around EdgeX Foundry with modular containers and plugins, and drove the solution through to commercialization.",
     color: "#009e4d",
     startDate: 'Jun 2023',
     endDate: 'Dec 2023',
@@ -135,7 +134,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Consultant",
     subTitleBadge: "Freelance",
-    description: "Innovations, architecture reviews, and technical improvements across industrial solutions.",
+    description: "Innovation and architecture consulting across two industrial projects. I designed computer vision and AI demonstrators for Industry 4.0 use cases, validating their business potential and whether they could be industrialized. In parallel I audited and refactored EcoStruxure Clean-in-Place Advisor, a quality management solution, improving the reliability and performance of its C# code base before it went into maintenance.",
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'May 2023',
@@ -146,7 +145,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Led the development of an industrial AR solution deployed internationally. Owned technical decisions, platform evolution, and delivery of a system used in production across multiple countries.",
+    description: "Led the creation and evolution of EcoStruxure Augmented Operator Advisor, an industrial AR platform deployed internationally. Defined the software and cloud architecture, and drove the move from vertical to horizontal scalability, cutting infrastructure costs. Users got standardized procedures, fewer errors, faster onboarding.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -157,7 +156,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Developer",
     subTitleBadge: "Freelance",
-    description: "Contributed to the AMIE collaborative research project, developed PoC and demonstrators within the Innovation team, then built Augmented Reality solutions for Google Tango and Microsoft HoloLens.",
+    description: "Worked on the AMIE collaborative research project (LIG, Digital Electronics Corp, AIST) exploring mobile AR for industrial maintenance. I built early prototypes on Google Tango and Microsoft HoloLens as part of their closed beta programs, showing that immersive maintenance and training procedures were feasible. The work contributed to patent filings.",
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Dec 2016',
@@ -170,6 +169,7 @@ export const jobs = [
     color: "#83bb34",
     startDate: 'Feb 2013',
     endDate: 'Aug 2013',
+    description: "Built XR proof-of-concepts including an echolocation simulator, mixed reality apps, and a museum serious game where visitors play a bat using echolocation.",
     logoSrc: '/cyberio.jpg',
     logoSize: 313,
     pb: 0,
@@ -211,15 +211,7 @@ export const projectsAndContributions = [
     drawConnector: false,
     pb: 1
   },
-  {
-    subTitle: "jampgame_proxy",
-    color: "black",
-    description: "Security hardening tool for legacy Jedi Academy game servers, addressing network vulnerabilities on aging infrastructure via proxy DLL, function detouring and injection.",
-    url: 'https://github.com/VincentMarnier/jampgame_proxy',
-    logoSrc: '/github.svg',
-    logoSize: 98,
-    drawConnector: false
-  },
+
 ]
 
 const data: ResumeData = { titles, profile, aboutMe, keySkills, skills, languages, interests, jobs, diplomas, projectsAndContributions }

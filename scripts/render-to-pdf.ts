@@ -2,7 +2,7 @@ import * as puppeteer from 'puppeteer'
 import { ALL_LANGUAGES_CODE } from "../src/app/[lang]/language";
 
 async function generatePDF() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
 
 

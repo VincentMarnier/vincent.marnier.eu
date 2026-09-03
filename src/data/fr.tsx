@@ -25,8 +25,7 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Lead Developer et fondateur avec <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d'expérience</Typography> en développement logiciel — de la réalité augmentée industrielle aux plateformes cloud. Je prends la responsabilité technique complète : architecture, code, infrastructure, delivery.{" "}
-  <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>Fondateur d'Augmencia</Typography>, je développe seul des plateformes cloud & edge de bout en bout.
+  Leader technique avec <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d&apos;expérience</Typography> en logiciel industriel, de plateformes AR déployées à l&apos;international jusqu&apos;au SaaS cloud et edge. Je prends en charge l&apos;ensemble du sujet : architecture, code, infrastructure, déploiement.
 </Typography>
 
 export const aboutMe = [
@@ -103,7 +102,7 @@ export const interests = [
   "Jeux de société",
   "Sciences & technologie",
   "Cuisine - techniques & saveurs du monde",
-  "E-sport - capitaine de l'équipe de France (Jedi Academy, 2009)",
+
 ]
 
 export const jobs = [
@@ -111,7 +110,7 @@ export const jobs = [
     title: "Augmencia",
     subTitle: "Fondateur",
     subTitleBadge: "Fondateur",
-    description: "Créé la plateforme AR cloud & edge d'Augmencia de zéro : architecture, développement, infrastructure et déploiement. Responsabilité technique complète d'un système en production.",
+    description: "Fondateur d'Augmencia, une plateforme SaaS de digitalisation des savoir-faire industriels. J'ai conçu et développé seul la plateforme cloud et edge : architecture, application de réalité augmentée, infrastructure, sécurité, déploiement. Elle permet aux experts terrain de transmettre leurs connaissances sur site, sans compétences techniques, pour que la formation, la maintenance et le transfert de savoir-faire fonctionnent en environnement industriel.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: "Aujourd'hui",
@@ -124,7 +123,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Pilotage de la conception et du développement d'une plateforme d'acquisition de données IT/OT. Direction technique, stratégies d'intégration et livraison d'un système distribué pour environnements edge.",
+    description: "Pilotage de l'architecture et du développement d'une plateforme d'acquisition de données IT/OT pour l'infrastructure edge de Schneider Electric. Architecture cible autour d'EdgeX Foundry avec des conteneurs et plugins modulaires, jusqu'à la commercialisation.",
     color: "#009e4d",
     startDate: 'Juin 2023',
     endDate: 'Déc 2023',
@@ -135,7 +134,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Consultant Logiciel",
     subTitleBadge: "Freelance",
-    description: "Innovations, revues d'architecture et améliorations techniques sur des solutions industrielles.",
+    description: "Consulting en innovation et en architecture sur deux projets industriels. J'ai conçu des démonstrateurs en vision par ordinateur et en IA pour des cas d'usage Industrie 4.0, en validant leur potentiel métier et leur capacité à être industrialisés. En parallèle, j'ai audité et refondu EcoStruxure Clean-in-Place Advisor, une solution de gestion de la qualité, en améliorant la fiabilité et les performances de son code C# avant son passage en maintenance.",
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'Mai 2023',
@@ -146,7 +145,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Pilotage du développement d'une solution de réalité augmentée industrielle déployée à l'international. Décisions techniques, évolution de la plateforme et livraison d'un système en production dans plusieurs pays.",
+    description: "Pilotage de la création et de l'évolution d'EcoStruxure Augmented Operator Advisor, une plateforme de réalité augmentée industrielle déployée à l'international. Définition de l'architecture logicielle et cloud, et conduite du passage à une scalabilité horizontale, réduisant nettement les coûts d'infrastructure. Pour les utilisateurs : procédures standardisées, moins d'erreurs, onboarding plus rapide.",
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -157,7 +156,7 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Développeur Logiciel",
     subTitleBadge: "Freelance",
-    description: "Contribution au projet de recherche collaboratif AMIE, développement de PoC et démonstrateurs au sein de l'équipe Innovation, puis création d'une solution de Réalité Augmentée sur Google Tango et Microsoft HoloLens.",
+    description: "Contribution au projet de recherche collaboratif AMIE (LIG, Digital Electronics Corp, AIST) sur la réalité augmentée mobile pour la maintenance industrielle. Développement des premiers prototypes sur Google Tango et Microsoft HoloLens (programmes beta fermés), démontrant la faisabilité de procédures de maintenance et de formation immersives. Contribution au dépôt de brevets.",
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Déc 2016',
@@ -170,6 +169,7 @@ export const jobs = [
     color: "#83bb34",
     startDate: 'Fév 2013',
     endDate: 'Août 2013',
+    description: "Développement de Proof of Concepts XR : un simulateur d'écholocation, des applications de réalité mixte et un serious game muséal.",
     logoSrc: '/cyberio.jpg',
     logoSize: 313,
     pb: 0,
@@ -211,15 +211,7 @@ export const projectsAndContributions = [
     drawConnector: false,
     pb: 1
   },
-  {
-    subTitle: "jampgame_proxy",
-    color: "black",
-    description: "Outil de sécurisation pour serveurs Jedi Academy vieillissants, adressant les vulnérabilités réseau via un proxy DLL, du detouring et de l'injection de fonctions.",
-    url: 'https://github.com/VincentMarnier/jampgame_proxy',
-    logoSrc: '/github.svg',
-    logoSize: 98,
-    drawConnector: false
-  },
+
 ]
 
 const data: ResumeData = { titles, profile, aboutMe, keySkills, skills, languages, interests, jobs, diplomas, projectsAndContributions }
