@@ -23,6 +23,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
       sx={{
         display: "flex",
         alignItems: "stretch",
+        breakInside: "avoid",
       }}
     >
       {/* Left rail */}

@@ -45,6 +45,7 @@ async function generatePDF() {
       path: `resume.${languageCode}.pdf`,
       format: 'A4',
       printBackground: true,
+      scale: 0.85,
     });
   }
 

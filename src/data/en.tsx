@@ -61,7 +61,7 @@ export const keySkills = {
     "API Design",
     "CI/CD",
     "Code Review & Quality",
-    "Git",
+    "Technical Mentoring",
     "Agile & Scrum"
   ]
 }
@@ -102,7 +102,7 @@ export const interests = [
   "Board games",
   "Science & Technology",
   "Cooking (techniques & world cuisines)",
-
+  "E-sport (French national team captain, Jedi Academy - 2009)",
 ]
 
 export const jobs = [
@@ -110,7 +110,7 @@ export const jobs = [
     title: "Augmencia",
     subTitle: "Founder",
     subTitleBadge: "Founder",
-    description: "Founder building Augmencia, a SaaS platform for digitizing industrial field expertise. I designed and developed the whole cloud and edge platform myself, from architecture and the AR application to infrastructure, security and deployment. It lets field experts capture and pass on their knowledge on site, no technical skills needed, so that training, maintenance and know-how transfer work in industrial environments.",
+    description: "Founder building Augmencia, a SaaS platform for digitizing industrial field expertise. I designed and built the entire platform myself — AR application, cloud architecture, infrastructure, security and deployment. It lets field experts capture and transfer knowledge on site, streamlining training, maintenance and know-how transfer in industrial environments.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: 'Present',
@@ -169,7 +169,7 @@ export const jobs = [
     color: "#83bb34",
     startDate: 'Feb 2013',
     endDate: 'Aug 2013',
-    description: "Built XR proof-of-concepts including an echolocation simulator, mixed reality apps, and a museum serious game where visitors play a bat using echolocation.",
+    description: "Built XR proof-of-concepts in Unity including an echolocation simulator, mixed reality apps, and a museum serious game where visitors play a bat using echolocation.",
     logoSrc: '/cyberio.jpg',
     logoSize: 313,
     pb: 0,
@@ -211,7 +211,15 @@ export const projectsAndContributions = [
     drawConnector: false,
     pb: 1
   },
-
+  {
+    subTitle: "jampgame_proxy",
+    color: "black",
+    description: "Security hardening tool for legacy Jedi Academy game servers, addressing network vulnerabilities via proxy DLL, function detouring and injection.",
+    url: 'https://github.com/VincentMarnier/jampgame_proxy',
+    logoSrc: '/github.svg',
+    logoSize: 98,
+    drawConnector: false
+  },
 ]
 
 const data: ResumeData = { titles, profile, aboutMe, keySkills, skills, languages, interests, jobs, diplomas, projectsAndContributions }
