@@ -109,7 +109,16 @@ export const jobs = [
   {
     title: "Augmencia",
     subTitle: "Founder",
-    description: "Founder building Augmencia, a SaaS platform for digitizing industrial field expertise. I designed and built the entire platform myself — AR application, cloud architecture, infrastructure, security and deployment. It lets field experts capture and transfer knowledge on site, streamlining training, maintenance and know-how transfer in industrial environments.",
+    description: <>
+      Founder of Augmencia, a SaaS platform for digitizing industrial field expertise.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Designed and built the entire platform from concept to production — AR application, cloud and edge architecture, infrastructure, security and deployment</li>
+        <li>Industrialized the solution for demanding industrial environments (reliability, long runtime, constrained networks)</li>
+        <li>Designed a hybrid cloud/edge architecture with tablet deployment</li>
+        <li>Ensured data security and sovereignty with on-premise or cloud hosting per the company&apos;s security policy</li>
+        <li>Integrated with existing systems via open API and Node-RED connectors (CMMS, ERP, SCADA, IoT)</li>
+      </ul>
+    </>,
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: 'Present',
@@ -122,7 +131,15 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Led the architecture and development of an IT/OT data acquisition platform for Schneider Electric's edge infrastructure. Defined the target architecture around EdgeX Foundry with modular containers and plugins, and drove the solution through to commercialization.",
+    description: <>
+      Lead dev in a 3-person team on an IT/OT data acquisition platform for Schneider Electric&apos;s edge infrastructure.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Contributed to product and target architecture definition, built around Schneider&apos;s overlay on EdgeX Foundry (modular containers and plugins)</li>
+        <li>Close collaboration with a US-based team</li>
+        <li>Established code quality practices with a strong focus on CI, later reused by 3 other teams</li>
+        <li>Mentored and coached junior developers</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Jun 2023',
     endDate: 'Dec 2023',
@@ -133,7 +150,13 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Consultant",
     subTitleBadge: "Freelance",
-    description: "Innovation and architecture consulting across two industrial projects. I designed computer vision and AI demonstrators for Industry 4.0 use cases, validating their business potential and whether they could be industrialized. In parallel I audited and refactored EcoStruxure Clean-in-Place Advisor, a quality management solution, improving the reliability and performance of its C# code base before it went into maintenance.",
+    description: <>
+      Two engagements carried out back-to-back for Schneider Electric&apos;s R&D.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>AI exploration: designed computer vision and AI demonstrators for Industry 4.0 use cases, validating business potential and industrialization readiness</li>
+        <li>Audited then rearchitected EcoStruxure Clean-in-Place Advisor: evolved its legacy C# code base and stabilized the solution</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'May 2023',
@@ -144,7 +167,16 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Led the creation and evolution of EcoStruxure Augmented Operator Advisor, an industrial AR platform deployed internationally. Defined the software and cloud architecture, and drove the move from vertical to horizontal scalability, cutting infrastructure costs. Users got standardized procedures, fewer errors, faster onboarding.",
+    description: <>
+      Lead dev in a 4-person team on EcoStruxure Augmented Operator Advisor, an industrial AR application deployed internationally.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Defined the Unity app architecture</li>
+        <li>Co-designed data exchange formats with the web configurator and on-premise server</li>
+        <li>Established code quality practices (reviews, standards, CI)</li>
+        <li>Onboarded new team members</li>
+        <li>Conducted tech watch and drove product improvements</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -155,7 +187,14 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Software Developer",
     subTitleBadge: "Freelance",
-    description: "Worked on the AMIE collaborative research project (LIG, Digital Electronics Corp, AIST) exploring mobile AR for industrial maintenance. I built early prototypes on Google Tango and Microsoft HoloLens as part of their closed beta programs, showing that immersive maintenance and training procedures were feasible. The work contributed to patent filings.",
+    description: <>
+      Worked on the AMIE collaborative research project (LIG, Digital Electronics Corp, AIST) exploring mobile AR for industrial maintenance.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Carried out the exploration and feasibility proof on Google Tango and Microsoft HoloLens (closed beta programs)</li>
+        <li>Built early prototypes of immersive maintenance and training procedures</li>
+        <li>Work that led to several patent filings</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Dec 2016',

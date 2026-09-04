@@ -33,7 +33,7 @@ export interface TimelineEntry {
   logoSize: number
   startDate?: string
   endDate?: string
-  description?: string
+  description?: ReactNode
   url?: string
   pb?: number
   drawConnector?: boolean

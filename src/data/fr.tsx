@@ -109,7 +109,16 @@ export const jobs = [
   {
     title: "Augmencia",
     subTitle: "Fondateur",
-    description: "Fondateur d'Augmencia, une plateforme SaaS de digitalisation des savoir-faire industriels. J'ai conçu et développé l'ensemble de la plateforme cloud et edge : architecture, application AR, infrastructure, sécurité et déploiement. Elle permet aux experts terrain de capturer et transmettre leurs connaissances sur site, rationalisant la formation, la maintenance et le transfert de savoir-faire en environnement industriel.",
+    description: <>
+      Fondateur d&apos;Augmencia, une plateforme SaaS de digitalisation des savoir-faire industriels.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Conception et développement de l&apos;ensemble de la plateforme, du concept à la mise en production : application AR, architecture cloud et edge, infrastructure, sécurité et déploiement</li>
+        <li>Industrialisation de la solution pour des environnements industriels exigeants (fiabilité, longue durée, réseau contraint)</li>
+        <li>Conception d&apos;une architecture hybride cloud/edge avec déploiement sur tablette</li>
+        <li>Sécurité et souveraineté des données avec hébergement on-premise ou cloud selon la politique de l&apos;entreprise</li>
+        <li>Intégrations aux systèmes existants via API ouverte et connecteurs Node-RED (CMMS, ERP, SCADA, IoT)</li>
+      </ul>
+    </>,
     color: "#FF9B82",
     startDate: 'Jan 2024',
     endDate: "Aujourd'hui",
@@ -122,7 +131,15 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Pilotage de l'architecture et du développement d'une plateforme d'acquisition de données IT/OT pour l'infrastructure edge de Schneider Electric. Architecture cible autour d'EdgeX Foundry avec des conteneurs et plugins modulaires, jusqu'à la commercialisation.",
+    description: <>
+      Lead dev dans une équipe de 3 sur une plateforme d&apos;acquisition de données IT/OT pour l&apos;infrastructure edge de Schneider Electric.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Participation à la définition du produit et de la cible d&apos;architecture, autour d&apos;une surcouche Schneider à EdgeX Foundry (conteneurs et plugins modulaires)</li>
+        <li>Collaboration étroite avec une équipe américaine</li>
+        <li>Mise en place de pratiques de qualité avec un fort accent sur le CI, réutilisées ensuite par 3 autres équipes</li>
+        <li>Formation et coaching de développeurs juniors</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Juin 2023',
     endDate: 'Déc 2023',
@@ -133,7 +150,13 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Consultant Logiciel",
     subTitleBadge: "Freelance",
-    description: "Consulting en innovation et en architecture sur deux projets industriels. J'ai conçu des démonstrateurs en vision par ordinateur et en IA pour des cas d'usage Industrie 4.0, en validant leur potentiel métier et leur capacité à être industrialisés. En parallèle, j'ai audité et refondu EcoStruxure Clean-in-Place Advisor, une solution de gestion de la qualité, en améliorant la fiabilité et les performances de son code C# avant son passage en maintenance.",
+    description: <>
+      Deux chantiers menés successivement pour la R&D de Schneider Electric.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Exploration IA : conception de démonstrateurs vision par ordinateur et IA pour des cas d&apos;usage Industrie 4.0, avec validation du potentiel métier et de l&apos;industrialisation</li>
+        <li>Audit puis rearchitecture d&apos;EcoStruxure Clean-in-Place Advisor : évolution du code legacy C# et stabilisation de la solution</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Nov 2021',
     endDate: 'Mai 2023',
@@ -144,7 +167,16 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
-    description: "Pilotage de la création et de l'évolution d'EcoStruxure Augmented Operator Advisor, une plateforme de réalité augmentée industrielle déployée à l'international. Définition de l'architecture logicielle et cloud, et conduite du passage à une scalabilité horizontale, réduisant nettement les coûts d'infrastructure. Pour les utilisateurs : procédures standardisées, moins d'erreurs, onboarding plus rapide.",
+    description: <>
+      Lead dev dans une équipe de 4 sur EcoStruxure Augmented Operator Advisor, une application de réalité augmentée industrielle déployée à l&apos;international.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Architecture de l&apos;application Unity</li>
+        <li>Définition des formats d&apos;échange avec le configurateur web et le serveur on-premise</li>
+        <li>Mise en place de pratiques de qualité (reviews, conventions, CI)</li>
+        <li>Onboarding des nouveaux membres de l&apos;équipe</li>
+        <li>Veille technologique et améliorations produit</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Jan 2017',
     endDate: 'Oct 2021',
@@ -155,7 +187,14 @@ export const jobs = [
     title: "Schneider Electric",
     subTitle: "Développeur Logiciel",
     subTitleBadge: "Freelance",
-    description: "Contribution au projet de recherche collaboratif AMIE (LIG, Digital Electronics Corp, AIST) sur la réalité augmentée mobile pour la maintenance industrielle. Développement des premiers prototypes sur Google Tango et Microsoft HoloLens (programmes beta fermés), démontrant la faisabilité de procédures de maintenance et de formation immersives. Contribution au dépôt de brevets.",
+    description: <>
+      Contribution au projet de recherche collaboratif AMIE (LIG, Digital Electronics Corp, AIST) sur la réalité augmentée mobile pour la maintenance industrielle.
+      <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
+        <li>Réalisation de l&apos;exploration et de la preuve de faisabilité sur Google Tango et Microsoft HoloLens (programmes beta fermés)</li>
+        <li>Développement des premiers prototypes de procédures de maintenance et de formation immersives</li>
+        <li>Travaux à l&apos;origine de plusieurs dépôts de brevets</li>
+      </ul>
+    </>,
     color: "#009e4d",
     startDate: 'Sep 2013',
     endDate: 'Déc 2016',

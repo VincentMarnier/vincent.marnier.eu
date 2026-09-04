@@ -129,6 +129,7 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
           direction="column"
           sx={{
             pt: 8,
+            pb: 2,
             boxDecorationBreak: "clone",
           }}
         >

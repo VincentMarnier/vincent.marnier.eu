@@ -1,3 +1,4 @@
+import * as React from "react"
 import { Box, Chip, Stack, Typography, useTheme } from "@mui/material";
 import { alpha } from "@mui/material";
 import LinkIcon from '@mui/icons-material/Link';
@@ -13,12 +14,24 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
   logoSize: number,
   startDate?: string,
   endDate?: string,
-  description?: string,
+  description?: React.ReactNode,
   pb?: number,
   drawConnector?: boolean,
   url?: string,
   index?: number}) {
   const theme = useTheme();
+  
+  const computedDescription = React.useMemo(() => {
+    if (!description) {
+      return undefined;
+    }
+    if (typeof description === "string") {
+      return <Typography color="text.secondary">
+        {description}
+      </Typography>
+    }
+    return description;
+  }, [description]);
 
   return (
     <Box
@@ -102,9 +115,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
             </Typography>
             {subTitleBadge && <Chip variant="outlined" size="small" label={subTitleBadge} /> }
           </Stack>}
-        {description && <Typography color="text.secondary">
-          {description}
-        </Typography>}
+        {computedDescription}
         {url && <Box sx={{mt:1}}><Link href={url}><Badge text={url} color={theme.palette.text.primary} icon={<LinkIcon color="secondary" fontSize="medium" />} /></Link></Box>}
       </Box>
     </Box>

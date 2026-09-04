@@ -29,11 +29,17 @@ Static personal resume site (Next.js 16, App Router, MUI v9, TypeScript). Deploy
 - Theme in `src/app/[lang]/theme.ts`
 - Images unoptimized (required for static export)
 
+## Resume content
+
+- Job `description` fields in `src/data/en.tsx` and `src/data/fr.tsx` accept JSX (`ReactNode`) and use an **intro sentence + `<ul>` bullet list**, not plain strings. Keep the bullet style consistent across all entries.
+- Descriptions use a concise, **nominal tone** — no "J'ai" / "I built" — consistently across all jobs and both languages.
+- Only include content the candidate can substantiate: don't claim decisions they only contributed to, or results (e.g. commercialization, patent filings) that weren't theirs.
+
 ## PDF generation (Puppeteer)
 
 - `scripts/render-to-pdf.ts` renders each locale via `page.emulateMediaType('screen')`, so `@media print` CSS does **not** apply. Any floating/overlay UI that should not appear in PDFs (e.g. the language switcher) must carry `class="hide-in-pdf"` for the script to hide it.
 - Timeline `<img>` elements load eagerly (no `loading="lazy"`) on purpose — lazy images below the fold can fail to render in the Puppeteer PDF. The page is small, so eager loading is not a concern. Don't add `loading="lazy"`.
-- All language PDFs must fit within **max 2 pages**. Content must be adjusted (font sizes, spacing, trimmed descriptions) to stay within this constraint.
+- **After each modification to resume content, verify the resume still fits within max 2 pages** (per language). Adjust font sizes, spacing, or trimmed descriptions if needed.
 
 ## CI
 
