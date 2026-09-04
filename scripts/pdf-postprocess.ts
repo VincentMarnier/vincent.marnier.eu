@@ -10,6 +10,7 @@ export interface XmpInput {
   language: string;
   profile: string;
   personJsonLd: Record<string, unknown>;
+  pageCount: number;
 }
 
 export function embedXmp(doc: PDFDocument, data: XmpInput): void {
@@ -39,6 +40,8 @@ function buildXmpPacket(data: XmpInput): string {
       .replace(/'/g, "&apos;");
 
   const jsonLdEscaped = escapeXml(JSON.stringify(data.personJsonLd));
+  const keywordItems = data.keywords.map((k) => `<rdf:li>${escapeXml(k)}</rdf:li>`).join('');
+  const keywordsAttr = escapeXml(data.keywords.join(', '));
 
   const lines: string[] = [];
   lines.push('<?xpacket begin="\uFEFF" id="W5M0MpCehiHzreSzNTczkc9d"?>');
@@ -53,14 +56,17 @@ function buildXmpPacket(data: XmpInput): string {
   lines.push(`   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">${escapeXml(data.title)}</rdf:li></rdf:Alt></dc:title>`);
   lines.push(`   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">${escapeXml(data.description)}</rdf:li></rdf:Alt></dc:description>`);
   lines.push(`   <dc:creator><rdf:Seq><rdf:li>${escapeXml(data.creator)}</rdf:li></rdf:Seq></dc:creator>`);
-  lines.push(`   <dc:subject><rdf:Bag><rdf:li>${escapeXml(data.subject)}</rdf:li></rdf:Bag></dc:subject>`);
+  lines.push(`   <dc:subject><rdf:Bag>${keywordItems}</rdf:Bag></dc:subject>`);
+  lines.push(`   <dc:format>application/pdf</dc:format>`);
   lines.push(`   <dc:language><rdf:Bag><rdf:li>${escapeXml(data.language)}</rdf:li></rdf:Bag></dc:language>`);
   lines.push(`   <pdf:Producer>vincent.marnier.eu resume pipeline</pdf:Producer>`);
+  lines.push(`   <pdf:Keywords>${keywordsAttr}</pdf:Keywords>`);
   lines.push(`   <pdfx:profile>${escapeXml(data.profile)}</pdfx:profile>`);
   lines.push(`   <xmp:CreatorTool>vincent.marnier.eu</xmp:CreatorTool>`);
   lines.push(`   <xmp:CreateDate>${now}</xmp:CreateDate>`);
   lines.push(`   <xmp:ModifyDate>${now}</xmp:ModifyDate>`);
-  lines.push(`   <xmpTPg:Pages>2</xmpTPg:Pages>`);
+  lines.push(`   <xmpTPg:NPages>${data.pageCount}</xmpTPg:NPages>`);
+  lines.push(`   <xmpTPg:Pages>${data.pageCount}</xmpTPg:Pages>`);
   lines.push(`   <pdfx:source>${jsonLdEscaped}</pdfx:source>`);
   lines.push('  </rdf:Description>');
   lines.push(' </rdf:RDF>');

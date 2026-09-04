@@ -116,7 +116,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
             {subTitleBadge && <Chip variant="outlined" size="small" label={subTitleBadge} /> }
           </Stack>}
         {computedDescription}
-        {url && <Box sx={{mt:1}}><Link href={url}><Badge text={url} color={theme.palette.text.primary} icon={<LinkIcon color="secondary" fontSize="medium" />} /></Link></Box>}
+        {url && <Box sx={{mt:1}}><Link href={url}><Badge text={url.replace(/^https?:\/\//, '')} color={theme.palette.text.primary} icon={<LinkIcon color="secondary" fontSize="medium" />} /></Link></Box>}
       </Box>
     </Box>
   );

@@ -49,7 +49,7 @@ export const aboutMe = [
   {
     key: 'website',
     icon: <LinkIcon color="secondary" fontSize="medium" />,
-    text: 'https://vincent.marnier.eu',
+    text: 'vincent.marnier.eu',
     href: 'https://vincent.marnier.eu'
   }
 ];
