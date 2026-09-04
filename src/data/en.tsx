@@ -25,19 +25,21 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Technical leader with <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography> in industrial software, from AR platforms deployed internationally to cloud and edge SaaS. I handle the full picture: architecture, code, infrastructure, deployment.
+  Technical leader with{' '}<Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ years of experience</Typography>{' '}in industrial software, from AR platforms deployed internationally to cloud and edge SaaS. I handle the full picture: architecture, code, infrastructure, deployment.
 </Typography>
 
 export const aboutMe = [
   {
     key: 'phoneNumber',
     icon: <CallIcon color="secondary" fontSize="medium" />,
-    text: '+33 7 86 35 09 26'
+    text: '+33 7 86 35 09 26',
+    href: 'tel:+33786350926'
   },
   {
     key: 'email',
     icon: <AlternateEmailIcon color="secondary" fontSize="medium" />,
-    text: 'vincent@marnier.eu'
+    text: 'vincent@marnier.eu',
+    href: 'mailto:vincent@marnier.eu'
   },
   {
     key: 'location',
@@ -47,7 +49,8 @@ export const aboutMe = [
   {
     key: 'website',
     icon: <LinkIcon color="secondary" fontSize="medium" />,
-    text: 'https://vincent.marnier.eu'
+    text: 'https://vincent.marnier.eu',
+    href: 'https://vincent.marnier.eu'
   }
 ];
 
@@ -96,7 +99,7 @@ export const skills = [{
   data: ["Cloud", "IoT", "Edge Computing", "Augmented Reality", "Computer Vision"],
 }]
 
-export const languages = [ "🇫🇷 French: Native", "🇬🇧 English: Full Professional" ];
+export const languages = [ { code: 'fr' as const, label: "French: Native" }, { code: 'en' as const, label: "English: Full Professional" } ];
 
 export const interests = [
   "Board games",

@@ -25,19 +25,21 @@ export const titles = {
 }
 
 export const profile = <Typography>
-  Leader technique avec <Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d&apos;expérience</Typography> en logiciel industriel, de plateformes AR déployées à l&apos;international jusqu&apos;au SaaS cloud et edge. Je prends en charge l&apos;ensemble du sujet : architecture, code, infrastructure, déploiement.
+  Leader technique avec{' '}<Typography variant="inherit" component="span" sx={{fontWeight: 700}}>13+ ans d&apos;expérience</Typography>{' '}en logiciel industriel, de plateformes AR déployées à l&apos;international jusqu&apos;au SaaS cloud et edge. Je prends en charge l&apos;ensemble du sujet : architecture, code, infrastructure, déploiement.
 </Typography>
 
 export const aboutMe = [
   {
     key: 'phoneNumber',
     icon: <CallIcon color="secondary" fontSize="medium" />,
-    text: '+33 7 86 35 09 26'
+    text: '+33 7 86 35 09 26',
+    href: 'tel:+33786350926'
   },
   {
     key: 'email',
     icon: <AlternateEmailIcon color="secondary" fontSize="medium" />,
-    text: 'vincent@marnier.eu'
+    text: 'vincent@marnier.eu',
+    href: 'mailto:vincent@marnier.eu'
   },
   {
     key: 'location',
@@ -47,7 +49,8 @@ export const aboutMe = [
   {
     key: 'website',
     icon: <LinkIcon color="secondary" fontSize="medium" />,
-    text: 'https://vincent.marnier.eu'
+    text: 'https://vincent.marnier.eu',
+    href: 'https://vincent.marnier.eu'
   }
 ];
 
@@ -96,7 +99,7 @@ export const skills = [{
   data: ["Cloud", "IoT", "Edge Computing", "Réalité Augmentée", "Vision par Ordinateur"]
 }]
 
-export const languages = [ "🇫🇷 Français : Natif", "🇬🇧 Anglais : Courant" ];
+export const languages = [ { code: 'fr' as const, label: "Français : Natif" }, { code: 'en' as const, label: "Anglais : Courant" } ];
 
 export const interests = [
   "Jeux de société",

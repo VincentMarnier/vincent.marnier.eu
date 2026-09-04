@@ -5,7 +5,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import Badge from "./Badge";
 import Link from "next/link";
 
-export default function TimelineItem({title, subTitle, subTitleBadge, color, logoSrc, logoSize, startDate, endDate, description, pb = 2, drawConnector = true, url, index = 0}: {
+export default function TimelineItem({title, subTitle, subTitleBadge, color, logoSrc, logoSize, startDate, endDate, description, pb = 1, drawConnector = true, url, index = 0}: {
   title?: string,
   subTitle?: string,
   subTitleBadge?: string,
@@ -95,7 +95,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
       <Box sx={{ pb, pt: 1, width: "100%" }}>
         {(title || startDate || endDate) && <Stack direction="row" sx={{alignItems: "center", justifyContent: "space-between"}}>
             <Typography component="h3" variant="h6" sx={{fontWeight: 700}}>
-              {title}
+              {title}{' '}
             </Typography>
           {startDate && endDate && (
             <Box sx={{
@@ -111,7 +111,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
         </Stack>}
         {subTitle && <Stack direction="row" sx={{alignItems: "center", gap: 1}}>
             <Typography component="h4" variant="h6">
-              {subTitle}
+              {subTitle}{' '}
             </Typography>
             {subTitleBadge && <Chip variant="outlined" size="small" label={subTitleBadge} /> }
           </Stack>}

@@ -43,7 +43,7 @@ const theme: Omit<ThemeOptions, 'components'> &
     borderRadius: 12,
   },
   typography: {
-    fontFamily: "'Inter', 'Helvetica', 'Arial', sans-serif",
+    fontFamily: "'Noto Sans', 'Helvetica', 'Arial', sans-serif",
     h1: {
       fontSize: '2.4em',
       fontWeight: 700,

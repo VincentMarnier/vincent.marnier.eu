@@ -16,6 +16,12 @@ export interface AboutMeRow {
   key: string
   icon: ReactNode
   text: string
+  href?: string
+}
+
+export interface LanguageEntry {
+  code: 'fr' | 'en'
+  label: string
 }
 
 export interface SkillGroup {
@@ -45,7 +51,7 @@ export interface ResumeData {
   aboutMe: AboutMeRow[]
   keySkills: SkillGroup
   skills: SkillGroup[]
-  languages: string[]
+  languages: LanguageEntry[]
   interests: string[]
   jobs: TimelineEntry[]
   diplomas: TimelineEntry[]
