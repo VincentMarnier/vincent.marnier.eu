@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Metadata } from 'next'
 import LayoutClient from './layout_client'
+import JsonLdScript from './components/JsonLdScript'
 import { ALL_LANGUAGES_CODE, LanguageCode } from './language'
 
 type ParamsProps = { lang: LanguageCode }
@@ -65,7 +66,13 @@ export default function Layout({
 
   return (
     <html lang={lang}>
-      <LayoutClient languageCode={lang}>{children}</LayoutClient>
+      {/* Passed as a child (not imported) so it stays a Server Component
+          rendering inside <body> — a <script> directly under <html> is
+          invalid HTML. */}
+      <LayoutClient languageCode={lang}>
+        <JsonLdScript lang={lang} />
+        {children}
+      </LayoutClient>
     </html>
   )
 }

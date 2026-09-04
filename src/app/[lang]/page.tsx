@@ -13,7 +13,6 @@ import Section from './components/Section';
 import Badge from './components/Badge';
 import TimelineItem from './components/TimelineItem';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import JsonLd from './components/JsonLd';
 import { CircleFlag } from './components/Flags';
 import { useLocalizedData } from "./LanguageContext";
 import { LanguageCode } from "./language";
@@ -27,14 +26,12 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
   return (
     <>
       <LanguageSwitcher lang={lang} />
-      <JsonLd lang={lang} />
       {/* DOM order is main-first for machine reading order (name first, no
           mid-document sidebar interruption). Visuals stay identical: the
           sidebar is explicitly placed in the left grid column. No flex `order`
           is used on purpose — Chromium emits PDF text in paint order, so flex
           `order` would push the sidebar back to the front of the text layer. */}
       <Box
-        component="main"
         sx={{
           m: 0,
           minHeight: "200vh",
@@ -43,17 +40,19 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
         }}
       >
 
-      <Box sx={{
-        flex: 1,
-        minWidth: 0,
-        px: 2,
-        gridColumn: "2",
-        gridRow: "1",
-        '@keyframes fadeSlide': {
-          from: { opacity: 0, transform: 'translateY(8px)' },
-          to: { opacity: 1, transform: 'translateY(0)' },
-        },
-      }}
+      <Box
+        component="main"
+        sx={{
+          flex: 1,
+          minWidth: 0,
+          px: 2,
+          gridColumn: "2",
+          gridRow: "1",
+          '@keyframes fadeSlide': {
+            from: { opacity: 0, transform: 'translateY(8px)' },
+            to: { opacity: 1, transform: 'translateY(0)' },
+          },
+        }}
       >
         <Stack
           direction="column"
@@ -120,8 +119,8 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
       {/* ****************************************** */}
 
       <Paper
-        component="aside"
-        role="complementary"
+        component="section"
+        aria-label={lang === "fr" ? "Coordonnées, compétences, langues et centres d'intérêt" : "Contact details, skills, languages and interests"}
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -141,10 +140,10 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
         }}>
           <Stack direction="column" sx={{gap: 2.5}}>
             <Image 
-              src="/VincentMarnier.png"
+              src="/VincentMarnier.jpg"
               alt=""
-              width={800}
-              height={800}
+              width={200}
+              height={200}
               aria-hidden="true"
               style={{
                 width:"66%",
@@ -160,7 +159,12 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
             />
 
             <Stack component="address" direction="column" sx={{gap: 1, fontStyle: 'normal'}}>
-              {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 1, alignItems: "center"}}>
+              {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 1, alignItems: "center"}}
+                aria-label={`${(lang === "fr"
+                  ? { phoneNumber: "Téléphone", email: "E-mail", location: "Lieu", website: "Site web" }
+                  : { phoneNumber: "Phone", email: "Email", location: "Location", website: "Website" }
+                )[r.key as "phoneNumber" | "email" | "location" | "website"] ?? r.key}: ${r.text}`}
+              >
                 <Box aria-hidden="true" sx={{
                   display: 'flex',
                   alignItems: 'center',

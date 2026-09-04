@@ -19,7 +19,12 @@ const META = {
   },
 } as const;
 
-async function postProcessPdf(path: string, languageCode: string) {
+const CONTACT_LABELS = {
+  en: ['Phone', 'Email', 'Location', 'Website'],
+  fr: ['Téléphone', 'E-mail', 'Lieu', 'Site web'],
+} as const;
+
+async function postProcessPdf(path: string, languageCode: string, atsTextPath: string) {
   const meta = META[languageCode as keyof typeof META] ?? META.en;
   const bytes = await fs.readFile(path);
   const doc = await PDFDocument.load(bytes);
@@ -61,6 +66,23 @@ async function postProcessPdf(path: string, languageCode: string) {
 
   const out = await doc.save();
   await fs.writeFile(path, out);
+
+  // Attach the linear plain-text resume (same content, DOM order) so
+  // ATS / agents that read embedded files get a clean single-column
+  // version without the 2-column paint-order scrambling. Zero visual impact.
+  try {
+    const atsText = await fs.readFile(atsTextPath, 'utf-8');
+    const fileName = atsTextPath.split('/').pop() ?? `resume.${languageCode}.txt`;
+    await doc.attach(new TextEncoder().encode(atsText), fileName, {
+      mimeType: 'text/plain; charset=utf-8',
+      description: 'Plain-text version of the resume (linear reading order) for ATS and AI parsing',
+      creationDate: now,
+      modificationDate: now,
+    });
+    await fs.writeFile(path, await doc.save());
+  } catch {
+    // Attachment is a bonus — never fail the PDF build over it.
+  }
 }
 
 async function generatePDF() {
@@ -111,6 +133,29 @@ async function generatePDF() {
 
     await page.emulateMediaType('screen');
 
+    // Linear plain-text resume for machines: DOM order is main-first
+    // (name → profile → experience → …) then sidebar, so innerText gives a
+    // clean single-column reading order even though the PDF paint order
+    // interleaves the two visual columns. Contact rows get explicit labels
+    // (they are icon-only in the visual layout). The aboutMe block always
+    // renders phone, email, location, website in that order.
+    const labels = CONTACT_LABELS[languageCode as keyof typeof CONTACT_LABELS] ?? CONTACT_LABELS.en;
+    const atsText = await page.evaluate((contactLabels: readonly string[]) => {
+      const mainText = document.querySelector('main')?.innerText.trim() ?? '';
+      const sidebar = document.querySelector('section[aria-label]') ?? document.querySelector('aside');
+      const sideLines = (sidebar as HTMLElement | null)?.innerText
+        .split('\n')
+        .map((l) => l.trimEnd())
+        .filter((l) => l.trim().length > 0) ?? [];
+      const labelled = sideLines.map((line, i) =>
+        i < contactLabels.length ? `${contactLabels[i]}: ${line}` : line,
+      );
+      return `${mainText}\n\n${labelled.join('\n')}\n`.replace(/\n{3,}/g, '\n\n');
+    }, [...labels]);
+
+    const atsTextPath = `resume.${languageCode}.txt`;
+    await fs.writeFile(atsTextPath, atsText, 'utf-8');
+
     const path = `resume.${languageCode}.pdf`;
     await page.pdf({
       path,
@@ -119,9 +164,13 @@ async function generatePDF() {
       scale: 0.85,
       displayHeaderFooter: false,
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
+      // Zero visual impact: only adds the tagged structure tree (screen
+      // readers, modern ATS) and native bookmarks from the h1-h4 headings.
+      tagged: true,
+      outline: true,
     });
 
-    await postProcessPdf(path, languageCode);
+    await postProcessPdf(path, languageCode, atsTextPath);
   }
 
   await browser.close();
