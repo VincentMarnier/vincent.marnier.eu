@@ -109,7 +109,6 @@ export const jobs = [
   {
     title: "Augmencia",
     subTitle: "Founder",
-    subTitleBadge: "Founder",
     description: "Founder building Augmencia, a SaaS platform for digitizing industrial field expertise. I designed and built the entire platform myself — AR application, cloud architecture, infrastructure, security and deployment. It lets field experts capture and transfer knowledge on site, streamlining training, maintenance and know-how transfer in industrial environments.",
     color: "#FF9B82",
     startDate: 'Jan 2024',

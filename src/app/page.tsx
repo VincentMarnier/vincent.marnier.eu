@@ -37,7 +37,7 @@ function ResumeSkeleton() {
           boxSizing: 'border-box',
           bgcolor: theme.palette.primary.dark,
           color: theme.palette.primary.contrastText,
-          py: 3,
+          py: 8,
           px: 2,
           minHeight: "100vh",
         }}
@@ -50,7 +50,7 @@ function ResumeSkeleton() {
           </Box>
         </Stack>
       </Paper>
-      <Stack direction="column" sx={{flex: 1, pt: 4, px: 2, gap: 3}}>
+      <Stack direction="column" sx={{flex: 1, pt: 8, pb: 8, px: 2, gap: 3}}>
         <Box sx={{alignSelf: "center", textAlign: "center", width: "60%"}}>
           <Skeleton variant="text" sx={{fontSize: '2.5rem', mb: 1}} />
           <Skeleton variant="text" sx={{fontSize: '1.5rem', width: "50%", mx: "auto"}} />

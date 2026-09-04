@@ -109,7 +109,6 @@ export const jobs = [
   {
     title: "Augmencia",
     subTitle: "Fondateur",
-    subTitleBadge: "Fondateur",
     description: "Fondateur d'Augmencia, une plateforme SaaS de digitalisation des savoir-faire industriels. J'ai conçu et développé l'ensemble de la plateforme cloud et edge : architecture, application AR, infrastructure, sécurité et déploiement. Elle permet aux experts terrain de capturer et transmettre leurs connaissances sur site, rationalisant la formation, la maintenance et le transfert de savoir-faire en environnement industriel.",
     color: "#FF9B82",
     startDate: 'Jan 2024',
