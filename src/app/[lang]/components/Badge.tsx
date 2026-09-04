@@ -41,7 +41,7 @@ export default function Badge({
         {icon}
         <Typography
           variant="caption"
-          component="p"
+          component="span"
           sx={{ color: color, fontSize: `${fontSize}rem`, fontWeight: 700 }}
           noWrap
         >

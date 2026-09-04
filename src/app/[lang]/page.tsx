@@ -13,6 +13,7 @@ import Section from './components/Section';
 import Badge from './components/Badge';
 import TimelineItem from './components/TimelineItem';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import JsonLd from './components/JsonLd';
 import { useLocalizedData } from "./LanguageContext";
 import { LanguageCode } from "./language";
 
@@ -25,8 +26,11 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
   return (
     <>
       <LanguageSwitcher lang={lang} />
+      <JsonLd lang={lang} />
       <Stack direction="row" component="main" sx={{m:0, minHeight: "200vh"}}>
       <Paper
+        component="aside"
+        role="complementary"
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -61,7 +65,7 @@ export default function Page({ lang }: { lang?: LanguageCode }) {
               }}
             />
 
-            <Stack direction="column" sx={{gap: 1}}>
+            <Stack component="address" direction="column" sx={{gap: 1, fontStyle: 'normal'}}>
               {data.aboutMe.map(r => <Stack key={r.key} direction="row" sx={{gap: 1, alignItems: "center"}}>
                 <Box sx={{
                   display: 'flex',

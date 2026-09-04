@@ -39,6 +39,11 @@ async function generatePDF() {
       });
     });
 
+    // Set PDF metadata via document title and meta tags
+    await page.evaluate((title) => {
+      document.title = title;
+    }, `Vincent Marnier – Resume (${languageCode.toUpperCase()})`);
+
     // Let entrance animations finish before capturing
     await new Promise((resolve) => setTimeout(resolve, 1200));
 
@@ -49,6 +54,8 @@ async function generatePDF() {
       format: 'A4',
       printBackground: true,
       scale: 0.85,
+      displayHeaderFooter: false,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
   }
 

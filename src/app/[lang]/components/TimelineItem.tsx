@@ -70,7 +70,7 @@ export default function TimelineItem({title, subTitle, subTitleBadge, color, log
         >
           <img 
             src={logoSrc} 
-            alt={title ?? subTitle ?? ""} 
+            alt={`${title ?? subTitle ?? "logo"} logo`}
             width={logoSize} 
             height={logoSize} 
             style={{width: "60%", height: "auto", position: "absolute", top: "20%", left: "20%"}}
