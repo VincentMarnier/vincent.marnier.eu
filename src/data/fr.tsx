@@ -135,7 +135,7 @@ export const jobs = [
     subTitle: "Lead Developer",
     subTitleBadge: "Freelance",
     description: <>
-      Lead dev dans une équipe de 3 sur une plateforme d&apos;acquisition de données IT/OT pour l&apos;infrastructure edge de Schneider Electric.
+      Lead dev d&apos;une plateforme d&apos;acquisition de données IT/OT pour l&apos;infrastructure edge de Schneider Electric.
       <ul style={{ margin: "4px 0", paddingLeft: "1.5em" }}>
         <li>Participation à la définition du produit et de la cible d&apos;architecture, autour d&apos;une surcouche Schneider à EdgeX Foundry (conteneurs et plugins modulaires)</li>
         <li>Collaboration étroite avec une équipe américaine</li>
