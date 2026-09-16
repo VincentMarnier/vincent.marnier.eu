@@ -253,10 +253,10 @@ export const projectsAndContributions = [
     pb: 1
   },
   {
-    subTitle: "jampgame_proxy",
+    subTitle: "jampgame-proxy-rs",
     color: "#000000",
-    description: "Security hardening tool for legacy Jedi Academy game servers, addressing network vulnerabilities via proxy DLL, function detouring and injection.",
-    url: 'https://github.com/VincentMarnier/jampgame_proxy',
+    description: "AI-assisted Rust port and evolution of the Jedi Academy server security proxy, addressing network vulnerabilities via module interposition, function detouring and injection.",
+    url: 'https://github.com/VincentMarnier/jampgame-proxy-rs',
     logoSrc: '/github.svg',
     logoSize: 98,
     drawConnector: false
